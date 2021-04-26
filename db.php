@@ -1,5 +1,5 @@
 <?php 
-    declare(strict_types=1);
+    require "strict.php";
     class DB{
         private $db_server;
         private $db_user;
