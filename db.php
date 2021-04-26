@@ -16,7 +16,7 @@
                 echo "DB error : {$this->connection->connect_error}";
             }
         }
-        public function check_email($email,$admin){
+        public function check_email($email,$admin=true){
             $table_name = null;
             if($admin){
                 $table_name = "ADMIN_DETAILS";
