@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lymas | Admin login</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/user_login.js"></script>
+</head>
+<body>
+    <form action="login.php" method="post" id="loginForm" onsubmit="return validateForm();">
+        <input type="text" name="email" id="uname" placeholder="Enter your E-Mail"><br>
+        <input type="text" name="password" id="password" placeholder="Enter your password"><br>
+        <input type="submit" value="login" name="login_submit" id="submitBtn">
+    </form>
+</body>
+</html>
