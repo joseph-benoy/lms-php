@@ -1,7 +1,8 @@
 function checkUsername(){
+    console.log("USER NAME CHECKING!!!");
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
-        if(this.readyState===4&&this.response===200){
+        if(this.readyState===4&&this.status===200){
             console.log(this.responseText);
         }
     };
@@ -11,5 +12,4 @@ function checkUsername(){
 }
 $(document).ready(function(){
     $(`#uname`).focusout(checkUsername);
-
 });
