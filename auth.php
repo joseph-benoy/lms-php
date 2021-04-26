@@ -5,7 +5,6 @@
         echo "both email and password!";
     }
     elseif(isset($_POST['email'])){
-        echo "only email\n";
         echo $db->check_email($_POST['email'],true);
     }
     else{
