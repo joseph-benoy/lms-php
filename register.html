@@ -10,7 +10,20 @@
 <body>
     <h1>Register</h1>
     <form action="verify_reg.php" method="post">
-        
+        <input type="file" name="profile_pic" id="profile_pic" required><br>
+        <input type="text" name="fname" id="fname" placeholder="First name" required><br>
+        <input type="text" name="lname" id="lname" placeholder="Last name" required><br>
+        <input type="email" name="email" id="email" placeholder="Valid email ID" required><br>
+        <input type="tel" name="phone" id="phone" placeholder="Valid phone number" required><br>
+        <input type="date" name="dob" id="dob" placeholder="Date of birth" required><br>
+        <input type="text" name="house" id="house" placeholder="House name" required><br>
+        <input type="text" name="street" id="street" placeholder="Street name" required><br>
+        <input type="text" name="city" id="city" placeholder="Resident city" required><br>
+        <input type="text" name="state" id="state" placeholder="Resident state" required><br>
+        <input type="text" name="country" id="country" placeholder="Country name"required><br>
+        <input type="text" name="pin" id="pin" placeholder="PIN code" required><br>
+        <input type="file" name="verification_doc" id="verification_doc" required><br>
+        <input type="submit" value="Verify" name="verfiy">
     </form>
 </body>
 </html>
