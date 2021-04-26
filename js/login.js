@@ -30,8 +30,7 @@ function checkUsername(){
             if(this.readyState===4&&this.status===200){
                 console.log(this.responseText);
                if(this.responseText=="0"){   
-                    $(`#password`).val("");
-                    $(`#password`).prop(`disabled`,true);
+                    unameFlag(false);
                 }
                 else{
                     $(`#password`).prop(`disabled`,false);
@@ -52,11 +51,11 @@ function checkPassword(){
             if(this.readyState===4&&this.status===200){
                 console.log(this.responseText);
                 if(this.responseText=="0"){
-                    unameFlag(true);
-                    passFlag(true);
+                    passFlag(false);
                 }
                 else{
-                    passFlag(false);
+                    unameFlag(true);
+                    passFlag(true);
                 }
             }
         };
@@ -74,7 +73,6 @@ function validateForm(){
     }
 }
 $(document).ready(function(){
-//    $(`#password`).prop(`disabled`,true);
     $(`#uname`).focusout(checkUsername);
     $(`#password`).focusout(checkPassword);
 });

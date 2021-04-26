@@ -9,7 +9,7 @@
     <script src="js/login.js"></script>
 </head>
 <body>
-    <form action="login.php" method="post" id="loginForm">
+    <form action="login.php" method="post" id="loginForm" onsubmit="return validateForm();">
         <input type="text" name="email" id="uname" placeholder="Enter your E-Mail"><br>
         <input type="text" name="password" id="password" placeholder="Enter your password"><br>
         <input type="submit" value="login" name="login_submit" id="submitBtn">
