@@ -16,16 +16,17 @@
                 echo "DB error : {$this->connection->connect_error}";
             }
         }
-        public function check_username($email,$admin){
-            $query = "SELECT EMAIL FROM ADMIN_DETAILS WHERE EMAIL=?";
-            $statement = $this->connection->prepare($query);
-            $statement->bind_param("s",$email_value);
+        public function check_email($email,$admin){
+            $table_name = null;
             if($admin){
                 $table_name = "ADMIN_DETAILS";
             }
             else{
                 $table_name = "USER_DETAILS";
             }
+            $query = "SELECT EMAIL FROM {$table_name} WHERE EMAIL=?";
+            $statement = $this->connection->prepare($query);
+            $statement->bind_param("s",$email_value);
             $email_value = $email;
             $statement->execute();
             $result = $statement->get_result();
@@ -33,7 +34,9 @@
             if($correct_email===$email){
                 return true;
             }
-            return false;
+            else{
+                return 0;
+            }
         }
     }
 ?>
