@@ -38,5 +38,27 @@
                 return 0;
             }
         }
+        public function check_password($email,$password,$admin){
+            $table_name = null;
+            if($admin){
+                $table_name = "ADMIN_DETAILS";
+            }
+            else{
+                $table_name = "USER_DETAILS";
+            }
+            $query = "SELECT EMAIL,CAST(AES_DECRYPT(PASSWORD,'key') AS CHAR) AS PASSWORD FROM {$table_name} WHERE EMAIL=?";
+            $statement = $this->connection->prepare($query);
+            $statement->bind_param("s",$email_val);
+            $email_val = $email;
+            $statement->execute();
+            $result = $statement->get_result();
+            $correct_row = $result->fetch_assoc();
+            if($correct_row['EMAIL']===$email&&$correct_row['PASSWORD']===$password){
+                return true;
+            }
+            else{
+                return 0;
+            }
+        }
     }
 ?>
