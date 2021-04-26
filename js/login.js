@@ -1,3 +1,27 @@
+let unameFlag = function(){
+    let uflag = false;
+    return function(flag=null){
+        if(flag===null){
+            return uflag;
+        }
+        else{
+            uflag = flag;
+            return uflag;
+        }
+    }
+}();
+let passFlag = function(){
+    let pFlag = false;
+    return function(flag=null){
+        if(flag===null){
+            return pFlag;
+        }
+        else{
+            pFlag = flag;
+            return pFlag;
+        }
+    }
+}();
 function checkUsername(){
     if(!($(`uname`).val()==="")){
         console.log("USER NAME CHECKING!!!");
@@ -5,13 +29,14 @@ function checkUsername(){
         xhttp.onreadystatechange = function(){
             if(this.readyState===4&&this.status===200){
                 console.log(this.responseText);
-    /*           if(this.responseText=="0"){    //enable during front end
+               if(this.responseText=="0"){   
                     $(`#password`).val("");
                     $(`#password`).prop(`disabled`,true);
                 }
                 else{
                     $(`#password`).prop(`disabled`,false);
-                }*/
+                    unameFlag(true);
+                }
             }
         };
         xhttp.open(`POST`,'auth.php',true);
@@ -20,12 +45,19 @@ function checkUsername(){
     }
 }
 function checkPassword(){
-    if(!($(`uname`).val()===""||$(`#password`).val()==="")){
+    if(!($(`uname`).val()===""||$(`#password`).val()===""||unameFlag()===false)){
         console.log("PASSWORD CHECKING!!!!!!!!!!");
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
             if(this.readyState===4&&this.status===200){
                 console.log(this.responseText);
+                if(this.responseText=="0"){
+                    unameFlag(true);
+                    passFlag(true);
+                }
+                else{
+                    passFlag(false);
+                }
             }
         };
         xhttp.open(`POST`,`auth.php`,true);
@@ -33,7 +65,16 @@ function checkPassword(){
         xhttp.send(`email=${$(`#uname`).val()}&password=${$(`#password`).val()}`);
     }
 }
+function validateForm(){
+    if(unameFlag()&&passFlag()){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 $(document).ready(function(){
 //    $(`#password`).prop(`disabled`,true);
     $(`#uname`).focusout(checkUsername);
+    $(`#password`).focusout(checkPassword);
 });

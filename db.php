@@ -38,7 +38,7 @@
                 return 0;
             }
         }
-        public function check_password($email,$password,$admin){
+        public function check_password($email,$password,$admin=true){
             $table_name = null;
             if($admin){
                 $table_name = "ADMIN_DETAILS";
@@ -61,4 +61,5 @@
             }
         }
     }
+    $db = new DB("localhost","joseph","3057","lms_php");
 ?>

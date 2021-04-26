@@ -1,6 +1,5 @@
-<?php declare(strict_types=1);
+<?php
     require "db.php";
-    $db = new DB("localhost","joseph","3057","lms_php");
     if(isset($_POST['email'])&&isset($_POST['password'])){
         echo $db->check_password($_POST['email'],$_POST['password'],true);
     }
