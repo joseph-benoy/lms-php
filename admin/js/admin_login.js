@@ -38,7 +38,7 @@ function checkUsername(){
                 }
             }
         };
-        xhttp.open(`POST`,'auth.php',true);
+        xhttp.open(`POST`,'admin/auth.php',true);
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
         xhttp.send(`email=${$(`#uname`).val()}`);
     }
@@ -59,7 +59,7 @@ function checkPassword(){
                 }
             }
         };
-        xhttp.open(`POST`,`auth.php`,true);
+        xhttp.open(`POST`,`admin/auth.php`,true);
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
         xhttp.send(`email=${$(`#uname`).val()}&password=${$(`#password`).val()}`);
     }
