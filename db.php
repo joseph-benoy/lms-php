@@ -92,30 +92,33 @@
             $verification_data = addslashes(file_get_contents($_FILES['verification_doc']['tmp_name']));
             $verification_type = getimagesize($_FILES['verification_doc']['tmp_name'])['mime'];
             $id = $this->create_id("MEMBERSHIP_REQUESTS");
-            $insert_query = "INSERT INTO MEMBERSHIP_REQUESTS VALUES(               
-                '{$id}',
-                '{$param_array['fname']}',
-                '{$param_array['lname']}',
-                '{$profile_pic_type}',
-                '{$profile_pic_data}',
-                '{$param_array['email']}',
-                '{$param_array['phone']}',
-                '{$param_array['dob']}',
-                '{$param_array['house']}',
-                '{$param_array['street']}',
-                '{$param_array['city']}',
-                '{$param_array['state_r']}',
-                '{$param_array['country']}',
-                '{$param_array['pin']}',
-                '{$verification_type}',
-                '{$verification_data}')";
-                if($this->connection->query($insert_query)){
-                    echo "Successfully inserted the query";
-                }
-                else{
-                    echo "failed to insert! : {$this->connection->error}";
-                }
+            $insert_query = "INSERT INTO MEMBERSHIP_REQUESTS VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $statement = $this->connection->prepare($insert_query);
+            $statement->bind_param("ssssbssssssssssb",
+                $id,
+                $param_array['fname'],
+                $param_array['lname'],
+                $profile_pic_type,
+                $profile_pic_data,
+                $param_array['email'],
+                $param_array['phone'],
+                $param_array['dob'],
+                $param_array['house'],
+                $param_array['street'],
+                $param_array['city'],
+                $param_array['state'],
+                $param_array['country'],
+                $param_array['pin'],
+                $verification_type,
+                $verification_data
+            );
+            if($statement->execute()){
+                echo "Membership request sent successfully!!";
+            }
+            else{
+                echo "Failed to create membership request!! = {$this->connection->error}";
+            }
         }
     }
-    $db = new DB("localhost","joseph","3057","lms_php");
+    $db = new DB("localhost","joseph","3057","LMS_PHP");
 ?>

@@ -61,5 +61,5 @@
             }
         }
     }
-    $db = new DB("localhost","joseph","3057","lms_php");
+    $db = new DB("localhost","joseph","3057","LMS_PHP");
 ?>
