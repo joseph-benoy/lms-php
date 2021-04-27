@@ -91,4 +91,13 @@ html, body {
   padding: 0;
   float: left; }
 
+/*-------------mob menu-------------*/
+#mob_menu {
+  background-color: #393e46;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 5000; }
+
 /*# sourceMappingURL=dashboard.css.map */

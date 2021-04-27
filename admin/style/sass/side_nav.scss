@@ -73,3 +73,12 @@ $light_blue:#00adb5;
     padding: 0;
     float: left;
 }
+/*-------------mob menu-------------*/
+#mob_menu{
+    background-color: $sidenav_background;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 5000;
+}
