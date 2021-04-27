@@ -81,4 +81,35 @@ $light_blue:#00adb5;
     position: fixed;
     top: 0;
     z-index: 5000;
+    overflow: auto;
+}
+#menu-close-icon{
+    display: block;
+    color: $sidenav_font_color;
+    font-family: roboto_reg;
+    font-size: 3em;
+    float: right;
+    margin-right: 10%;
+    margin-top: 3%;
+}
+#mob_menu_links{
+    position: relative;
+    top: 9vh;
+}
+#mob_menu_links a{
+    display: block;
+    color: $sidenav_font_color;
+    font-family: roboto_reg;
+    font-size: 1.7em;
+    width: 100%;
+    padding: 5% 0%;
+    padding-left: 25%;
+}
+#mob_menu_links a:hover{
+    text-decoration: none;
+    background-color: $light_blue;
+    color: $sidenav_background;
+}
+#mob_menu_links i{
+    margin-right: 5%;
 }

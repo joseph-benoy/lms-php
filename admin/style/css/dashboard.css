@@ -98,6 +98,37 @@ html, body {
   width: 100vw;
   position: fixed;
   top: 0;
-  z-index: 5000; }
+  z-index: 5000;
+  overflow: auto; }
+
+#menu-close-icon {
+  display: block;
+  color: #eeeeee;
+  font-family: roboto_reg;
+  font-size: 3em;
+  float: right;
+  margin-right: 10%;
+  margin-top: 3%; }
+
+#mob_menu_links {
+  position: relative;
+  top: 9vh; }
+
+#mob_menu_links a {
+  display: block;
+  color: #eeeeee;
+  font-family: roboto_reg;
+  font-size: 1.7em;
+  width: 100%;
+  padding: 5% 0%;
+  padding-left: 25%; }
+
+#mob_menu_links a:hover {
+  text-decoration: none;
+  background-color: #00adb5;
+  color: #393e46; }
+
+#mob_menu_links i {
+  margin-right: 5%; }
 
 /*# sourceMappingURL=dashboard.css.map */
