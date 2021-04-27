@@ -69,14 +69,15 @@
         }
         public function get_id($table_name){
             $count = get_count($table_name);
-            
+            $count++;
+            return "{$table_name[0]}_{$count}";
         }
         public function insert_into_membership($param_array){
             $profile_pic_data = addslashes(file_get_contents($param_array['profile_pic']['tmp_name']));
             $profile_pic_type= getimagesize($param_array['profile_pic']['tmp_name'])['mime'];
             $verification_data = addslashes(file_get_contents($param_array['verification_doc']['tmp_name']));
             $verification_type = getimagesize($param_array['verification_doc']['tmp_name'])['mime'];
-            $query = "INSERT INTO MEMBERSHIP_REQUESTS VALUES()";
+            $id = get_id("MEMBERSHIP_REQUESTS");
         }
     }
     $db = new DB("localhost","joseph","3057","lms_php");
