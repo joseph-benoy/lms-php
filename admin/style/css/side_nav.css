@@ -23,6 +23,12 @@
 #logoLink:hover {
   text-decoration: none; }
 
+#logoLink:active {
+  text-decoration: none; }
+
+#logoLink:visited {
+  text-decoration: none; }
+
 #navList i {
   margin-right: 5%; }
 
@@ -42,6 +48,9 @@
 
 /*-------------mobile nav------------*/
 #mobileNav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: none;
   background-color: #00adb5;
   color: #eeeeee; }
@@ -70,6 +79,7 @@
 
 /*-------------mob menu-------------*/
 #mob_menu {
+  display: none;
   background-color: #393e46;
   height: 100vh;
   width: 100vw;
@@ -81,8 +91,7 @@
 #menu-close-icon {
   display: block;
   color: #eeeeee;
-  font-family: roboto_reg;
-  font-size: 3em;
+  font-size: 2.5em;
   float: right;
   margin-right: 10%;
   margin-top: 3%; }
@@ -95,9 +104,9 @@
   display: block;
   color: #eeeeee;
   font-family: roboto_reg;
-  font-size: 1.7em;
+  font-size: 1.5em;
   width: 100%;
-  padding: 5% 0%;
+  padding: 4% 0%;
   padding-left: 25%; }
 
 #mob_menu_links a:hover {
@@ -107,5 +116,14 @@
 
 #mob_menu_links i {
   margin-right: 5%; }
+
+#logoLink_mob:active {
+  text-decoration: none; }
+
+#logoLink_mob:visited {
+  text-decoration: none; }
+
+#logoLink_mob:hover {
+  text-decoration: none; }
 
 /*# sourceMappingURL=side_nav.css.map */

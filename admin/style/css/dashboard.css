@@ -46,6 +46,12 @@ html, body {
 #logoLink:hover {
   text-decoration: none; }
 
+#logoLink:active {
+  text-decoration: none; }
+
+#logoLink:visited {
+  text-decoration: none; }
+
 #navList i {
   margin-right: 5%; }
 
@@ -65,6 +71,9 @@ html, body {
 
 /*-------------mobile nav------------*/
 #mobileNav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   display: none;
   background-color: #00adb5;
   color: #eeeeee; }
@@ -93,6 +102,7 @@ html, body {
 
 /*-------------mob menu-------------*/
 #mob_menu {
+  display: none;
   background-color: #393e46;
   height: 100vh;
   width: 100vw;
@@ -104,8 +114,7 @@ html, body {
 #menu-close-icon {
   display: block;
   color: #eeeeee;
-  font-family: roboto_reg;
-  font-size: 3em;
+  font-size: 2.5em;
   float: right;
   margin-right: 10%;
   margin-top: 3%; }
@@ -118,9 +127,9 @@ html, body {
   display: block;
   color: #eeeeee;
   font-family: roboto_reg;
-  font-size: 1.7em;
+  font-size: 1.5em;
   width: 100%;
-  padding: 5% 0%;
+  padding: 4% 0%;
   padding-left: 25%; }
 
 #mob_menu_links a:hover {
@@ -130,5 +139,14 @@ html, body {
 
 #mob_menu_links i {
   margin-right: 5%; }
+
+#logoLink_mob:active {
+  text-decoration: none; }
+
+#logoLink_mob:visited {
+  text-decoration: none; }
+
+#logoLink_mob:hover {
+  text-decoration: none; }
 
 /*# sourceMappingURL=dashboard.css.map */
