@@ -8,6 +8,9 @@ $light_blue:#00adb5;
     font-family: roboto_bold;
     color: $sidenav_font_color;
     padding: 0;
+    @media screen and (max-width:1199px) {
+        display: none;
+    }
 }
 #logo{
     padding: 3vh;
@@ -41,3 +44,32 @@ $light_blue:#00adb5;
     color: $sidenav_background;
 }
 
+/*-------------mobile nav------------*/
+
+#mobileNav{
+    display: none;
+    background-color: $light_blue;
+    color: $sidenav_font_color;
+    @media screen and (max-width:1199px) {
+        display: block;
+    }
+}
+#mobileNav a{
+    color: $sidenav_font_color;
+    font-size: 2em;
+    font-family: boldFont;
+}
+#mob_logOut{
+    float: right;
+}
+#logo_col_mob{
+    padding: 0;
+    text-align: center;
+}
+#signout_col_mob{
+    padding: 0;
+}
+#mob_nav_icon_col{
+    padding: 0;
+    float: left;
+}

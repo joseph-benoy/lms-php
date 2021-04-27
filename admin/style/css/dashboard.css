@@ -28,6 +28,9 @@ html, body {
   font-family: roboto_bold;
   color: #eeeeee;
   padding: 0; }
+  @media screen and (max-width: 1199px) {
+    #sideNav {
+      display: none; } }
 
 #logo {
   padding: 3vh;
@@ -59,5 +62,33 @@ html, body {
   text-decoration: none;
   background-color: #00adb5;
   color: #393e46; }
+
+/*-------------mobile nav------------*/
+#mobileNav {
+  display: none;
+  background-color: #00adb5;
+  color: #eeeeee; }
+  @media screen and (max-width: 1199px) {
+    #mobileNav {
+      display: block; } }
+
+#mobileNav a {
+  color: #eeeeee;
+  font-size: 2em;
+  font-family: boldFont; }
+
+#mob_logOut {
+  float: right; }
+
+#logo_col_mob {
+  padding: 0;
+  text-align: center; }
+
+#signout_col_mob {
+  padding: 0; }
+
+#mob_nav_icon_col {
+  padding: 0;
+  float: left; }
 
 /*# sourceMappingURL=dashboard.css.map */
