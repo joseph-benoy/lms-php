@@ -67,7 +67,7 @@
             $result = $statement->get_result();
             return $result->fetch_assoc()['COUNT'];
         }
-        public function get_id($table_name){
+        public function create_id($table_name){
             $count = get_count($table_name);
             $count++;
             return "{$table_name[0]}_{$count}";
@@ -77,7 +77,7 @@
             $profile_pic_type= getimagesize($param_array['profile_pic']['tmp_name'])['mime'];
             $verification_data = addslashes(file_get_contents($param_array['verification_doc']['tmp_name']));
             $verification_type = getimagesize($param_array['verification_doc']['tmp_name'])['mime'];
-            $id = get_id("MEMBERSHIP_REQUESTS");
+            $id = create_id("MEMBERSHIP_REQUESTS");
         }
     }
     $db = new DB("localhost","joseph","3057","lms_php");
