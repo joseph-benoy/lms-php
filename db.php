@@ -82,16 +82,39 @@
             return $result->fetch_assoc()['COUNT'];
         }
         public function create_id($table_name){
-            $count = get_count($table_name);
+            $count = $this->get_count($table_name);
             $count++;
             return "{$table_name[0]}_{$count}";
         }
-        public function insert_into_membership($param_array){
-            $profile_pic_data = addslashes(file_get_contents($param_array['profile_pic']['tmp_name']));
-            $profile_pic_type= getimagesize($param_array['profile_pic']['tmp_name'])['mime'];
-            $verification_data = addslashes(file_get_contents($param_array['verification_doc']['tmp_name']));
-            $verification_type = getimagesize($param_array['verification_doc']['tmp_name'])['mime'];
-            $id = create_id("MEMBERSHIP_REQUESTS");
+        public function insert_into_membership(&$param_array){
+            $profile_pic_data = addslashes(file_get_contents($_FILES['profile_pic']['tmp_name']));
+            $profile_pic_type= getimagesize($_FILES['profile_pic']['tmp_name'])['mime'];
+            $verification_data = addslashes(file_get_contents($_FILES['verification_doc']['tmp_name']));
+            $verification_type = getimagesize($_FILES['verification_doc']['tmp_name'])['mime'];
+            $id = $this->create_id("MEMBERSHIP_REQUESTS");
+            $insert_query = "INSERT INTO MEMBERSHIP_REQUESTS VALUES(               
+                '{$id}',
+                '{$param_array['fname']}',
+                '{$param_array['lname']}',
+                '{$profile_pic_type}',
+                '{$profile_pic_data}',
+                '{$param_array['email']}',
+                '{$param_array['phone']}',
+                '{$param_array['dob']}',
+                '{$param_array['house']}',
+                '{$param_array['street']}',
+                '{$param_array['city']}',
+                '{$param_array['state_r']}',
+                '{$param_array['country']}',
+                '{$param_array['pin']}',
+                '{$verification_type}',
+                '{$verification_data}')";
+                if($this->connection->query($insert_query)){
+                    echo "Successfully inserted the query";
+                }
+                else{
+                    echo "failed to insert! : {$this->connection->error}";
+                }
         }
     }
     $db = new DB("localhost","joseph","3057","lms_php");

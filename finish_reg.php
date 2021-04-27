@@ -1,8 +1,8 @@
 <?php
     require "strict.php";
-    require "db.php";
     session_start();
-    echo $db->insert_into_table("MEMBERSHIP_REQUESTS",16,array());
+    require "db.php";
+    echo $db->insert_into_membership($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="en">
