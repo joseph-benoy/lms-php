@@ -2,6 +2,7 @@
     require "strict.php";
     require "db.php";
     session_start();
+    echo $db->insert_into_table("MEMBERSHIP_REQUESTS",16,array());
 ?>
 <!DOCTYPE html>
 <html lang="en">

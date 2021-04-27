@@ -60,6 +60,20 @@
                 return 0;
             }
         }
+        public function insert_into_table($table_name,$value_array,$type_string){
+            $insert_query = "INSERT INTO {$table_name} VALUES(";
+            $no_of_values = count($value_array);
+            for($i=1;$i<=$no_of_values;$i++){
+                $insert_query.="?";
+                if($i<$no_of_values){
+                    $insert_query.=",";
+                }
+            }
+            $insert_query.=")";
+            $statement = $this->connection->prepare($insert_query);
+            $statement->bind_param($type_string,...$value_array);
+            return $statement->execute();
+        }
         public function get_count($table_name){
             $query = "SELECT COUNT(ID) AS COUNT FROM {$table_name}";
             $statement = $this->connection->prepare($query);
