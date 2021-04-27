@@ -70,13 +70,31 @@
                 }
             }
             $insert_query.=")";
-            $statement = $this->connection->prepare($insert_query);
-            $statement->bind_param($type_string,...$value_array);
-            return $statement->execute();
+            echo $insert_query;
+            if((!$statement = $this->connection->prepare($insert_query)))
+            {
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if((!$statement->bind_param($type_string,...$value_array)))
+            {
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if((!$statement->execute())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            else{
+                return true;
+            }
         }
         public function get_count($table_name){
             $query = "SELECT COUNT(ID) AS COUNT FROM {$table_name}";
-            $statement = $this->connection->prepare($query);
+            if((!$statement = $this->connection->prepare($query)))
+            {
+                echo "db error : {$this->connection->error}";
+            }
             $statement->execute();
             $result = $statement->get_result();
             return $result->fetch_assoc()['COUNT'];
@@ -86,9 +104,21 @@
             $count++;
             return "{$table_name[0]}_{$count}";
         }
-        public function insert_into_membership(&$param_array){
-            
+        public function insert_into_membership(){
+            $profile_pic_name = $_FILES['profile_pic']['name'];
+            $verification_name = $_FILES['verification_doc']['name'];
             $id = $this->create_id("MEMBERSHIP_REQUESTS");
+            $value_array = array();
+            array_push($value_array,$id);
+            foreach($_POST as $value){
+                array_push($value_array,$value);
+            }
+            array_splice($value_array,3,0,$profile_pic_name);
+            array_pop($value_array);
+            array_push($value_array,$verification_name);
+            print_r($value_array);
+            echo "value count = ".count($value_array);
+            return $this->insert_into_table("MEMBERSHIP_REQUESTS",$value_array,"ssssssssssssis");
         }
     }
     $db = new DB("localhost","joseph","3057","LMS_PHP");

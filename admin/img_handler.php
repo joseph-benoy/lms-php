@@ -3,7 +3,7 @@
     function store_image($field_name,$location){
         $target = $image_size = $image_type = null;
         if(isset($_FILES[$field_name])){
-            $target = $location.basename($_FILES[$field_name]['name']);
+            $target = $location."/".basename($_FILES[$field_name]['name']);
             $image_type = strtolower(pathinfo($_FILES[$field_name]['name'],PATHINFO_EXTENSION));
             $image_size = $_FILES[$field_name]['size'];
             if(isset($_POST['verify'])){
