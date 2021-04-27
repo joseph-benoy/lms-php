@@ -2,6 +2,19 @@
     require "strict.php";
     session_start();
     require "db.php";
+    require "image_handler.php";
+    if(store_image('profile_pic','uploads/mem_requests/profile_pic')){
+        echo "profile pic store successfully!!";
+    }
+    else{
+        echo "failed to store profile picture!!";
+    }
+    if(store_image('verification_doc','uploads/mem_requests/verification_doc')){
+        echo "profile pic store successfully!!";
+    }
+    else{
+        echo "failed to store profile picture!!";
+    }
     echo $db->insert_into_membership($_POST);
 ?>
 <!DOCTYPE html>
