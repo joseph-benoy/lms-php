@@ -116,8 +116,6 @@
             array_splice($value_array,3,0,$profile_pic_name);
             array_pop($value_array);
             array_push($value_array,$verification_name);
-            print_r($value_array);
-            echo "value count = ".count($value_array);
             return $this->insert_into_table("MEMBERSHIP_REQUESTS",$value_array,"ssssssssssssis");
         }
     }
