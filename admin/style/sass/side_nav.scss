@@ -1,0 +1,43 @@
+$sidenav_background:#393e46;
+$sidenav_font_color:#eeeeee;
+$light_blue:#00adb5;
+#sideNav{
+    background-color: $sidenav_background;
+    height: 100vh;
+    color:$sidenav_font_color;
+    font-family: roboto_bold;
+    color: $sidenav_font_color;
+    padding: 0;
+}
+#logo{
+    padding: 3vh;
+    text-align: center;
+    background-color: $light_blue;
+}
+#logoLink{
+    color: $sidenav_font_color;
+    font-weight: bold;
+    font-size: 2.6em;
+    font-family: boldFont;
+}
+#logoLink:hover{
+    text-decoration: none;
+}
+#navList i{
+    margin-right: 5%;
+}
+#navList a{
+    display: block;
+    color: $sidenav_font_color;
+    font-family: roboto_reg;
+    font-size: 1.4em;
+    width: 100%;
+    padding: 6% 0%;
+    padding-left: 15%;
+}
+#navList a:hover{
+    text-decoration: none;
+    background-color: $light_blue;
+    color: $sidenav_background;
+}
+

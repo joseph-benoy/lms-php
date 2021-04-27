@@ -1,0 +1,40 @@
+#sideNav {
+  background-color: #393e46;
+  height: 100vh;
+  color: #eeeeee;
+  font-family: roboto_bold;
+  color: #eeeeee;
+  padding: 0; }
+
+#logo {
+  padding: 3vh;
+  text-align: center;
+  background-color: #00adb5; }
+
+#logoLink {
+  color: #eeeeee;
+  font-weight: bold;
+  font-size: 2.6em;
+  font-family: boldFont; }
+
+#logoLink:hover {
+  text-decoration: none; }
+
+#navList i {
+  margin-right: 5%; }
+
+#navList a {
+  display: block;
+  color: #eeeeee;
+  font-family: roboto_reg;
+  font-size: 1.4em;
+  width: 100%;
+  padding: 6% 0%;
+  padding-left: 15%; }
+
+#navList a:hover {
+  text-decoration: none;
+  background-color: #00adb5;
+  color: #393e46; }
+
+/*# sourceMappingURL=side_nav.css.map */

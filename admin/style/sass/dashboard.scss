@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face
+{
+    font-family: baseFont;
+    src: url(../font/Orbitron-VariableFont_wght.ttf);
+}
+@font-face
+{
+    font-family: boldFont;
+    src: url(../font/Orbitron-Bold.ttf);
+}
+@font-face
+{
+    font-family: roboto_reg;
+    src: url(../font/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: roboto_medium;
+    src: url(../font/Roboto-Medium.ttf);
+}
+@font-face {
+    font-family: roboto_bold;
+    src: url(../font/Roboto-Bold.ttf);
+}
+html,body{
+    height: 100vh;
+}
+@import 'side_nav.scss';
