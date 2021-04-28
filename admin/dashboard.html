@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="style/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style/css/dashboard.css">
-    <script src="style/bootstrap/bootstrap.min.js"></script>
     <script src="style/bootstrap/jquery.min.js"></script>
     <script src="style/bootstrap/popper.min.js"></script>
+    <script src="style/bootstrap/bootstrap.min.js"></script>
     <script src="js/dashboard_ui.js"></script>
 </head>
 <body>
@@ -71,19 +71,39 @@
                 <div class="container tab" id="books_tab">
                 <!------------------------BOOKS TAB-------------------------->
                     <div class="container-fluid">
-                        <div class="row">
+                        <div class="row"><!--search box row-->
                             <div class="col-12" id="search_box">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="search for any book" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                      <button class="btn btn-outline-secondary" type="button" id="searchBtn">search</button>
-                                    </div>
                                   </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="container" id="book_btn_container"><!--whole button container-->
-
+                            <div class="container" id="list_btn_container"><!--list button container-->
+                                <div class="row">
+                                    <p>List by</p>                                     
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                        <label class="custom-control-label" for="customSwitch1"></label>
+                                      </div>
+                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                        <option hidden selected>Category</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <div class="custom-control custom-switch">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                        <label class="custom-control-label" for="customSwitch2"></label>
+                                      </div>
+                                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                        <option hidden selected>Author</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                    <button class="btn btn-primary btn-sm">Apply</button>
+                                </div>
                             </div>
                         </div>
                     </div>
