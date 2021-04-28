@@ -13,8 +13,12 @@ function openTab(event){
     $(`#${tab_name}`).show();
     closeTabExcept(tab_name);
     $(this).addClass(`side_nav_active`);
+    closeMobMenu();
 }
-
+function openAddNewBookPage(){
+    $(`#new_book_page`).toggle();
+    $(`#books_tab`).toggle();
+}
 $(document).ready(function(){
     $(`#navIcon`).click(openMobMenu);
     $(`#menu-close-icon`).click(closeMobMenu);
@@ -38,4 +42,6 @@ $(document).ready(function(){
     $(`#settings_btn_mob`).click({tab_name:"settings_tab"},openTab);
     $(`#profile_btn_mob`).click({tab_name:"profile_tab"},openTab);
     $(`#logout_btn_mob`).click({tab_name:"logout_tab"},openTab);
+//add new book page handler
+    $(`#add_book_btn`).click(openAddNewBookPage);
 });

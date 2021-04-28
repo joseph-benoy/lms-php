@@ -233,4 +233,7 @@ html, body {
   border: 0.001em solid #00adb5;
   color: #00adb5; }
 
+#new_book_page {
+  display: none; }
+
 /*# sourceMappingURL=dashboard.css.map */
