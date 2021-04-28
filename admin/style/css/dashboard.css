@@ -173,7 +173,25 @@ html, body {
   background-color: #ffffff;
   color: #00adb5; }
 
+#book_btn_container .row {
+  margin-bottom: 5%; }
+
 #book_btn_container button {
-  padding: 20%; }
+  padding: 15% 10%;
+  border: 0.3em solid #00adb5;
+  border-radius: 1em;
+  background-color: #ffffff;
+  color: #00adb5;
+  font-family: roboto_medium;
+  font-size: 1.2em;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3); }
+
+#book_btn_container button:hover {
+  background-color: #00adb5;
+  color: #ffffff;
+  box-shadow: 0px 8px 16px 0px #00adb5; }
+
+#book_btn_container i {
+  font-size: 1.3em; }
 
 /*# sourceMappingURL=dashboard.css.map */
