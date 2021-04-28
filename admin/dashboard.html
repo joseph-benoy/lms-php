@@ -70,41 +70,48 @@
                 </div>
                 <div class="container tab" id="books_tab">
                 <!------------------------BOOKS TAB-------------------------->
-                    <div class="container-fluid">
-                        <p id="search_box_label">Search</p>
-                        <div class="row"><!--search box row-->
-                            <div class="col-12" id="search_box">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="search for any book" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                  </div>
+                    <div class="row">
+                        <div class="container-fluid">
+                            <p id="search_box_label">Search</p>
+                            <div class="row"><!--search box row-->
+                                <div class="col-12" id="search_box">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="search for any book" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="container" id="list_btn_container"><!--list button container-->
-                                <p id="list_by">List by</p>
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <select class="custom-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                            <option hidden selected>Category</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
+                            <div class="row">
+                                <div class="container" id="list_btn_container"><!--list button container-->
+                                    <p id="list_by">List by</p>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <select class="custom-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                <option hidden selected>Category</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <select class="custom-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                                <option hidden selected>Author</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-2" id="filter_apply_box">
+                                            <button class="btn btn-primary btn-block" id="filter_apply_btn">Apply</button>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <button class="btn btn-primary btn-block" id="list_all_btn">List all</button>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <select class="custom-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                            <option hidden selected>Author</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-sm-2" id="filter_apply_box">
-                                        <button class="btn btn-primary btn-block" id="filter_apply_btn">Apply</button>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <button class="btn btn-primary btn-block" id="list_all_btn">List all</button>
-                                    </div>
+                                </div>
+                            </div>
+                            <div class="row"><!---------result table row--------->
+                                <div class="col-sm-12">
+                                    <h1>Result table</h1>
                                 </div>
                             </div>
                         </div>
