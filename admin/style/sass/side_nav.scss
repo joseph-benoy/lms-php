@@ -8,6 +8,8 @@ $light_blue:#00adb5;
     font-family: roboto_bold;
     color: $sidenav_font_color;
     padding: 0;
+    position: sticky;
+    top: 0;
     @media screen and (max-width:1199px) {
         display: none;
     }

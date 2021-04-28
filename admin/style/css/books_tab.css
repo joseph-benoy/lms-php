@@ -9,12 +9,14 @@
 #filter_apply_btn {
   background-color: #00adb5;
   font-weight: bold;
-  color: #ffffff; }
+  color: #ffffff;
+  border: none; }
 
 #list_all_btn {
   background-color: #00adb5;
   font-weight: bold;
-  color: #ffffff; }
+  color: #ffffff;
+  border: none; }
 
 #filter_apply_btn:hover {
   background-color: #ffffff;
@@ -33,6 +35,10 @@
 
 #search_box_label {
   font-size: 1.25em;
-  margin-top: 1%; }
+  margin-top: 4%; }
+
+@media screen and (max-width: 1199px) {
+  #filter_apply_box {
+    margin-bottom: 4%; } }
 
 /*# sourceMappingURL=books_tab.css.map */
