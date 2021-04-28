@@ -18,7 +18,7 @@ function openTab(event){
 $(document).ready(function(){
     $(`#navIcon`).click(openMobMenu);
     $(`#menu-close-icon`).click(closeMobMenu);
-//tab handling
+//tab handling desktop
     $(`#home_btn`).click({tab_name:"home_tab"},openTab);
     $(`#books_btn`).click({tab_name:"books_tab"},openTab);
     $(`#members_btn`).click({tab_name:"members_tab"},openTab);
@@ -28,4 +28,14 @@ $(document).ready(function(){
     $(`#settings_btn`).click({tab_name:"settings_tab"},openTab);
     $(`#profile_btn`).click({tab_name:"profile_tab"},openTab);
     $(`#logout_btn`).click({tab_name:"logout_tab"},openTab);
+//tab handling mobile
+    $(`#home_btn_mob`).click({tab_name:"home_tab"},openTab);
+    $(`#books_btn_mob`).click({tab_name:"books_tab"},openTab);
+    $(`#members_btn_mob`).click({tab_name:"members_tab"},openTab);
+    $(`#messages_btn_mob`).click({tab_name:"messages_tab"},openTab);
+    $(`#requests_btn_mob`).click({tab_name:"requests_tab"},openTab);
+    $(`#messages_btn_mob`).click({tab_name:"messages_tab"},openTab);
+    $(`#settings_btn_mob`).click({tab_name:"settings_tab"},openTab);
+    $(`#profile_btn_mob`).click({tab_name:"profile_tab"},openTab);
+    $(`#logout_btn_mob`).click({tab_name:"logout_tab"},openTab);
 });
