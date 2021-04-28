@@ -173,4 +173,7 @@ html, body {
   background-color: #ffffff;
   color: #00adb5; }
 
+#book_btn_container button {
+  padding: 20%; }
+
 /*# sourceMappingURL=dashboard.css.map */
