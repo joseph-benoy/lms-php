@@ -1,0 +1,14 @@
+$sidenav_background:#393e46;
+$sidenav_font_color:#eeeeee;
+$light_blue:#00adb5;
+#search_box{
+    padding: 3% 0%;
+}
+#searchBtn{
+    background-color: $light_blue;
+    color: white;
+}
+#searchBtn:hover{
+    background-color: #ffffff;
+    color: $light_blue;
+}

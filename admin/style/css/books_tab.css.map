@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,WAAW;EACP,OAAO,EAAE,KAAK;;AAElB,UAAU;EACN,gBAAgB,EALR,OAAO;EAMf,KAAK,EAAE,KAAK;;AAEhB,gBAAgB;EACZ,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAVG,OAAO",
+"sources": ["../sass/books_tab.scss"],
+"names": [],
+"file": "books_tab.css"
+}

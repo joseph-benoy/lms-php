@@ -162,4 +162,15 @@ html, body {
 #home_tab {
   display: block; }
 
+#search_box {
+  padding: 3% 0%; }
+
+#searchBtn {
+  background-color: #00adb5;
+  color: white; }
+
+#searchBtn:hover {
+  background-color: #ffffff;
+  color: #00adb5; }
+
 /*# sourceMappingURL=dashboard.css.map */
