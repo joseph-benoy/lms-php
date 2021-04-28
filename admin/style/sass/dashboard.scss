@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+$sidenav_background:#393e46;
+$sidenav_font_color:#eeeeee;
+$light_blue:#00adb5;
 @font-face
 {
     font-family: baseFont;
@@ -30,4 +33,4 @@ html,body{
     height: 100vh;
 }
 @import 'side_nav.scss';
-@import 'tabs.scsss';
+@import 'tabs.scss';

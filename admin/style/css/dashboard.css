@@ -69,6 +69,11 @@ html, body {
   background-color: #00adb5;
   color: #393e46; }
 
+.side_nav_active {
+  text-decoration: none;
+  background-color: #00adb5;
+  color: #393e46; }
+
 /*-------------mobile nav------------*/
 #mobileNav {
   position: sticky;
@@ -148,5 +153,13 @@ html, body {
 
 #logoLink_mob:hover {
   text-decoration: none; }
+
+.tab {
+  height: 100vh;
+  width: 100%;
+  display: none; }
+
+#home_tab {
+  display: block; }
 
 /*# sourceMappingURL=dashboard.css.map */

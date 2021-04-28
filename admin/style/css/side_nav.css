@@ -46,6 +46,11 @@
   background-color: #00adb5;
   color: #393e46; }
 
+.side_nav_active {
+  text-decoration: none;
+  background-color: #00adb5;
+  color: #393e46; }
+
 /*-------------mobile nav------------*/
 #mobileNav {
   position: sticky;
