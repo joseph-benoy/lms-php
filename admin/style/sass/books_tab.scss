@@ -1,6 +1,9 @@
 $sidenav_background:#393e46;
 $sidenav_font_color:#eeeeee;
 $light_blue:#00adb5;
+#books_tab{
+    position: relative;
+}
 #searchBtn{
     background-color: $light_blue;
     color: white;
@@ -35,10 +38,31 @@ $light_blue:#00adb5;
 }
 #search_box_label{
     font-size: 1.25em;
-    margin-top: 4%;
+    margin-top: 2%;
+    @media screen and (max-width:1199px) {
+        margin-top: 5%;
+    }
 }
 #filter_apply_box{
     @media screen and (max-width:1199px) {
         margin-bottom: 4%;
     }
+}
+#add_book_btn{
+    font-size: 2.5em;
+//    border-radius: 100%;
+    @include filter_btn($light_blue,#ffffff );
+    border:none;
+    position: fixed;
+    bottom: 10vh;
+    right: 10vh;
+    @media screen and (max-width:1199px){
+        bottom: 5vh;
+        right: 5vh;
+    }
+}
+#add_book_btn:hover{
+    background-color: #ffffff;
+    border: 0.001em solid $light_blue;
+    color:$light_blue;
 }
