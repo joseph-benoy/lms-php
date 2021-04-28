@@ -27,5 +27,5 @@ $(document).ready(function(){
     $(`#messages_btn`).click({tab_name:"messages_tab"},openTab);
     $(`#settings_btn`).click({tab_name:"settings_tab"},openTab);
     $(`#profile_btn`).click({tab_name:"profile_tab"},openTab);
-
+    $(`#logout_btn`).click({tab_name:"logout_tab"},openTab);
 });
