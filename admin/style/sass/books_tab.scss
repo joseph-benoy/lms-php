@@ -1,9 +1,6 @@
 $sidenav_background:#393e46;
 $sidenav_font_color:#eeeeee;
 $light_blue:#00adb5;
-#search_box{
-    padding: 3% 0%;
-}
 #searchBtn{
     background-color: $light_blue;
     color: white;
@@ -12,4 +9,29 @@ $light_blue:#00adb5;
     background-color: #ffffff;
     color: $light_blue;
 }
-
+@mixin filter_btn($bg_color,$color) {
+    background-color: $bg_color;
+    font-weight: bold;
+    color:$color;
+}
+#filter_apply_btn{
+    @include filter_btn($light_blue,#ffffff);
+}
+#list_all_btn{
+    @include filter_btn($light_blue,#ffffff);
+}
+#filter_apply_btn:hover{
+    @include filter_btn(#ffffff,$light_blue);
+    border: 0.08em solid $light_blue;
+}
+#list_all_btn:hover{
+    @include filter_btn(#ffffff,$light_blue);
+    border: 0.08em solid $light_blue;
+}
+#list_by{
+    font-size: 1.25em;
+}
+#search_box_label{
+    font-size: 1.25em;
+    margin-top: 1%;
+}
