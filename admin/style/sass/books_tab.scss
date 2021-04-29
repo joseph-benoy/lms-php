@@ -70,3 +70,11 @@ $light_blue:#00adb5;
     display: none;
     margin-top: 4%;
 }
+#add_new_book_form button{
+    @include filter_btn($light_blue,#ffffff);
+    border: none;
+}
+#add_new_book_form button:hover{
+    @include filter_btn(#ffffff,$light_blue);
+    border: 0.08em solid $light_blue;
+}

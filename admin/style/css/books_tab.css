@@ -70,4 +70,16 @@
   display: none;
   margin-top: 4%; }
 
+#add_new_book_form button {
+  background-color: #00adb5;
+  font-weight: bold;
+  color: #ffffff;
+  border: none; }
+
+#add_new_book_form button:hover {
+  background-color: #ffffff;
+  font-weight: bold;
+  color: #00adb5;
+  border: 0.08em solid #00adb5; }
+
 /*# sourceMappingURL=books_tab.css.map */
