@@ -15,9 +15,15 @@ function openTab(event){
     $(this).addClass(`side_nav_active`);
     closeMobMenu();
 }
-function openAddNewBookPage(){
+function toggleAddNewBookPage(){
     $(`#new_book_page`).toggle();
     $(`#books_tab`).toggle();
+}
+function showFileName(){
+    let file_name = $(`#customFile`).val().replace("C:\\fakepath\\","");
+    if(!(file_name===undefined||file_name==="")){
+        $(`#file_name_label`).html(file_name);
+    }
 }
 $(document).ready(function(){
     $(`#navIcon`).click(openMobMenu);
@@ -43,5 +49,7 @@ $(document).ready(function(){
     $(`#profile_btn_mob`).click({tab_name:"profile_tab"},openTab);
     $(`#logout_btn_mob`).click({tab_name:"logout_tab"},openTab);
 //add new book page handler
-    $(`#add_book_btn`).click(openAddNewBookPage);
+    $(`#add_book_btn`).click(toggleAddNewBookPage);
+    $(`#discard_btn`).click(toggleAddNewBookPage);
+    $(`#customFile`).change(showFileName);
 });

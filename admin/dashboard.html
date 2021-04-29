@@ -70,7 +70,56 @@
                     <h1>Home tab</h1>
                 </div>
                 <div class="container tab" id="new_book_page"><!--Add new book page container-->
-                    <h1>Add new book page</h1>
+                    <h2>Add new book</h2>
+                    <form>
+                        <div class="form-row">
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefault01">Book</label>
+                            <input type="text" class="form-control" id="validationDefault01" placeholder="Book's name"  required>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefault02">Author</label>
+                            <input type="text" class="form-control" id="validationDefault02" placeholder="Author's name" required>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefault02">Publisher</label>
+                            <input type="text" class="form-control" id="validationDefault02" placeholder="Publisher's name"  required>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFile" required>
+                                <label class="custom-file-label" for="customFile" id="file_name_label">Choose a cover image</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                              <label for="validationDefault01">Price</label>
+                              <input type="number" class="form-control" id="validationDefault01" placeholder="Price of the book"  required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="category_select">Category</label>
+                                <select class="custom-select" id="category_select">
+                                    <option selected hidden>Choose a category</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                              </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="validationDefault02">Stock</label>
+                              <input type="number" class="form-control" id="validationDefault02" placeholder="Current stock"  required>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Description of the book</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="120"></textarea>
+                              </div>
+                          </div>
+                          <button class="btn btn-primary" id="discard_btn" type="reset">Discard</button>
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </form>
                 </div>
                 <div class="container tab" id="books_tab">
                 <!------------------------BOOKS TAB-------------------------->

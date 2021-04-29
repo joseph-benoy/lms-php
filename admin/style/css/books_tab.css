@@ -67,6 +67,7 @@
   color: #00adb5; }
 
 #new_book_page {
-  display: none; }
+  display: none;
+  margin-top: 4%; }
 
 /*# sourceMappingURL=books_tab.css.map */
