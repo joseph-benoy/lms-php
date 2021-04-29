@@ -25,6 +25,18 @@ function showFileName(){
         $(`#file_name_label`).html(file_name);
     }
 }
+function togglePassword(){
+    if($(`#current_password`).attr(`type`)=="text"){
+        $(`#current_password`).attr(`type`,`password`);
+        $(`#new_password`).attr(`type`,`password`);
+        $(`#confirm_new_password`).attr(`type`,`password`);
+    }
+    else{
+        $(`#current_password`).attr(`type`,`text`);
+        $(`#new_password`).attr(`type`,`text`);
+        $(`#confirm_new_password`).attr(`type`,`text`);
+    }
+}
 $(document).ready(function(){
     $(`#navIcon`).click(openMobMenu);
     $(`#menu-close-icon`).click(closeMobMenu);
@@ -52,4 +64,5 @@ $(document).ready(function(){
     $(`#add_book_btn`).click(toggleAddNewBookPage);
     $(`#discard_btn`).click(toggleAddNewBookPage);
     $(`#customFile`).change(showFileName);
+    $(`#inlineCheckbox1`).change(togglePassword);
 });
