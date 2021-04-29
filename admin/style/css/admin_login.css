@@ -52,4 +52,10 @@
   color: #00adb5;
   border: 0.2em solid #00adb5; }
 
+#username_log p {
+  display: none; }
+
+#password_log p {
+  display: none; }
+
 /*# sourceMappingURL=admin_login.css.map */
