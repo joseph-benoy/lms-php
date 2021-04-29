@@ -74,28 +74,28 @@
                     <form id="add_new_book_form">
                         <div class="form-row">
                           <div class="col-md-4 mb-3">
-                            <label for="validationDefault01">Book</label>
-                            <input type="text" class="form-control" id="validationDefault01" placeholder="Book's name"  required>
+                            <label for="bookname_input">Book</label>
+                            <input type="text" class="form-control" id="bookname_input" placeholder="Book's name"  required>
                           </div>
                           <div class="col-md-4 mb-3">
-                            <label for="validationDefault02">Author</label>
-                            <input type="text" class="form-control" id="validationDefault02" placeholder="Author's name" required>
+                            <label for="author_input">Author</label>
+                            <input type="text" class="form-control" id="author_input" placeholder="Author's name" required>
                           </div>
                           <div class="col-md-4 mb-3">
-                            <label for="validationDefault02">Publisher</label>
-                            <input type="text" class="form-control" id="validationDefault02" placeholder="Publisher's name"  required>
+                            <label for="publisher_input">Publisher</label>
+                            <input type="text" class="form-control" id="publisher_input" placeholder="Publisher's name"  required>
                           </div>
                         </div>
                         <div class="form-row">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" required>
-                                <label class="custom-file-label" for="customFile" id="file_name_label">Choose a cover image</label>
+                                <input type="file" class="custom-file-input" id="customFile_books" required>
+                                <label class="custom-file-label" for="customFile_books" id="file_name_label">Choose a cover image</label>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-4 mb-3">
-                              <label for="validationDefault01">Price</label>
-                              <input type="number" class="form-control" id="validationDefault01" placeholder="Price of the book"  required>
+                              <label for="price_input">Price</label>
+                              <input type="number" class="form-control" id="price_input" placeholder="Price of the book"  required>
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="category_select">Category</label>
@@ -107,14 +107,14 @@
                                 </select>
                               </div>
                             <div class="col-md-4 mb-3">
-                              <label for="validationDefault02">Stock</label>
-                              <input type="number" class="form-control" id="validationDefault02" placeholder="Current stock"  required>
+                              <label for="stock_input">Stock</label>
+                              <input type="number" class="form-control" id="stock_input" placeholder="Current stock"  required>
                             </div>
                           </div>
                           <div class="form-row">
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Description of the book</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" cols="120"></textarea>
+                                <label for="book_description_input">Description of the book</label>
+                                <textarea class="form-control" id="book_description_input" rows="3" cols="120"></textarea>
                               </div>
                           </div>
                           <button class="btn btn-primary" id="discard_btn" type="reset">Discard</button>
@@ -186,11 +186,11 @@
                 </div>
                 <div class="container-fluid tab" id="profile_tab">
                     <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal fade" id="exampleModalCenter_profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter_profileTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">Change password</h5>
                             </div>
                             <div class="modal-body">
                                 <form>
@@ -229,70 +229,81 @@
                     </div>
                     <h2>Profile Settings</h2>
                     <form id="profile_update_form">
+                        <div class="form-row" id="admin_avatar_row">
+                            <div class="col-md-1 mb-3">
+                                <img src="uploads/profile_pic/avatar.png" alt="admin_avatar" class="img-fluid" id="admin_avatar">
+                            </div>
+                            <div class="col-md-3 mb-3 text-center">
+                                <div class="custom-file" id="file_input_grp_profile">
+                                    <input type="file" class="custom-file-input" id="avatar_file" >
+                                    <label id="avatar_input_label" for="avatar_file"><i class="bi bi-pencil-square"></i>Change photo</label>
+                                  </div>
+                            </div>
+                        </div>
                         <div class="form-row">
                           <div class="col-md-4 mb-3">
-                            <label for="validationDefault01">First name</label>
-                            <input type="text" class="form-control" id="validationDefault01" placeholder="First name"  required>
+                            <label for="firstname_input">First name</label>
+                            <input type="text" class="form-control" id="firstname_input" placeholder="First name"  required>
                           </div>
                           <div class="col-md-4 mb-3">
-                            <label for="validationDefault02">Last name</label>
-                            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" required>
+                            <label for="lastname_input">Last name</label>
+                            <input type="text" class="form-control" id="lastname_input" placeholder="Last name" required>
                           </div>
                           <div class="col-md-4 mb-3">
-                            <label for="validationDefaultUsername">Email</label>
+                            <label for="email_input">Email</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                <span class="input-group-text" id="inputGroupPrepend2_email">@</span>
                                 </div>
-                                <input type="Email" class="form-control" id="validationDefaultUsername" placeholder="valid email" aria-describedby="inputGroupPrepend2" required>
+                                <input type="Email" class="form-control" id="email_input" placeholder="valid email" aria-describedby="inputGroupPrepend2" required>
                             </div>
                           </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-4 mb-3">
-                                <label for="validationDefaultUsername">Phone</label>
+                                <label for="phone_input">Phone</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroupPrepend2"><i class="bi bi-telephone"></i></span>
+                                    <span class="input-group-text" id="inputGroupPrepend2_phone"><i class="bi bi-telephone"></i></span>
                                     </div>
-                                    <input type="tel" class="form-control" id="validationDefaultUsername" placeholder="valid phone number" aria-describedby="inputGroupPrepend2" required>
+                                    <input type="tel" class="form-control" id="phone_input" placeholder="valid phone number" aria-describedby="inputGroupPrepend2" required>
                                 </div>
                               </div>
                             <div class="col-md-4 mb-3">
-                                <label for="validationDefault02">Date of birth</label>
-                                <input type="date" class="form-control" id="validationDefault02" required>
+                                <label for="date_of_birth_input">Date of birth</label>
+                                <input type="date" class="form-control" id="date_of_birth_input" required>
                             </div>
                             <div class="col-md-4 mb-3">
-                              <label for="validationDefault02">House</label>
-                              <input type="text" class="form-control" id="validationDefault02" placeholder="House name/no."  required>
-                            </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="col-md-4 mb-3">
-                                <label for="validationDefault02">Street</label>
-                                <input type="text" class="form-control" id="validationDefault02" placeholder="Street name/no."  required>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="validationDefault02">City</label>
-                                <input type="text" class="form-control" id="validationDefault02" placeholder="City name"  required>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label for="validationDefault02">State</label>
-                                <input type="text" class="form-control" id="validationDefault02" placeholder="State name"  required>
+                              <label for="house_input">House</label>
+                              <input type="text" class="form-control" id="house_input" placeholder="House name/no."  required>
                             </div>
                           </div>
                           <div class="form-row">
                             <div class="col-md-4 mb-3">
-                                <label for="validationDefault02">Country</label>
-                                <input type="text" class="form-control" id="validationDefault02" placeholder="Country name"  required>
+                                <label for="street_input">Street</label>
+                                <input type="text" class="form-control" id="street_input" placeholder="Street name/no."  required>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="validationDefault02">PIN</label>
-                                <input type="number" class="form-control" id="validationDefault02" placeholder="PIN number"  required>
+                                <label for="city_input">City</label>
+                                <input type="text" class="form-control" id="city_input" placeholder="City name"  required>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <label for="validationDefault02">Password</label>
-                                <input type="button" class="form-control" data-toggle="modal" data-target="#exampleModalCenter" id="validationDefault02" value="Change password"  required>
+                                <label for="state_input">State</label>
+                                <input type="text" class="form-control" id="state_input" placeholder="State name">
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="country_input">Country</label>
+                                <input type="text" class="form-control" id="country_input" placeholder="Country name">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="pin_input">PIN</label>
+                                <input type="number" class="form-control" id="pin_input" placeholder="PIN number">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="changePasswordBtn">Password</label>
+                                <input type="button" class="form-control" data-toggle="modal" data-target="#exampleModalCenter_profile" id="changePasswordBtn" value="Change password">
                             </div>
                           </div>
                         <div class="form-row">

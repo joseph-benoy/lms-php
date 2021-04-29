@@ -1,10 +1,6 @@
 #profile_tab {
   padding-top: 4vh; }
 
-#admin_avatar {
-  max-width: 40%;
-  max-height: 40%; }
-
 #profile_tab button {
   background-color: #00adb5;
   font-weight: bold;
@@ -16,5 +12,17 @@
   font-weight: bold;
   color: #00adb5;
   border: 0.08em solid #00adb5; }
+
+#avatar_input_label {
+  background-color: #00adb5;
+  color: #ffffff;
+  font-size: 1.2em;
+  padding: 1vh 1.4vh;
+  border-radius: 5%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); }
+
+@media screen and (max-width: 1199px) {
+  #file_input_grp_profile {
+    margin-top: -10%; } }
 
 /*# sourceMappingURL=profile_tab.css.map */

@@ -45,6 +45,20 @@ function closeProfileTab(){
     $(`#home_btn`).addClass(`side_nav_active`);
     closeMobMenu();
 }
+function changeAvatar(event){
+    $(`#admin_avatar`).attr(`src`,URL.createObjectURL(event.target.files[0]));
+}
+
+
+
+
+
+
+
+
+
+
+
 $(document).ready(function(){
     $(`#navIcon`).click(openMobMenu);
     $(`#menu-close-icon`).click(closeMobMenu);
@@ -71,8 +85,9 @@ $(document).ready(function(){
 //add new book page handler
     $(`#add_book_btn`).click(toggleAddNewBookPage);
     $(`#discard_btn`).click(toggleAddNewBookPage);
-    $(`#customFile`).change(showFileName);
+    $(`#customFile_books`).change(showFileName);
 //profile tab handler
     $(`#inlineCheckbox1`).change(togglePassword);
     $(`#discard_btn_profile`).click(closeProfileTab);
+    $(`#avatar_file`).change(changeAvatar);
 });
