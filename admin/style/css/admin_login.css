@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
+
+@font-face {
+  font-family: baseFont;
+  src: url(../font/Orbitron-VariableFont_wght.ttf); }
+@font-face {
+  font-family: boldFont;
+  src: url(../font/Orbitron-Bold.ttf); }
+@font-face {
+  font-family: roboto_reg;
+  src: url(../font/Roboto-Regular.ttf); }
+@font-face {
+  font-family: roboto_medium;
+  src: url(../font/Roboto-Medium.ttf); }
+@font-face {
+  font-family: roboto_bold;
+  src: url(../font/Roboto-Bold.ttf); }
+#login_header {
+  background-color: #00adb5;
+  color: #ffffff;
+  font-family: boldFont;
+  text-align: center;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+  padding: 1vh 0vh;
+  margin-bottom: 5%; }
+  @media screen and (max-width: 1199px) {
+    #login_header {
+      padding: 1vh 0vh;
+      margin-bottom: 15%; } }
+
+#login_header h1 {
+  font-size: 3em; }
+
+#admin_login_form {
+  border: 5px solid #00adb5;
+  padding: 10vh;
+  border-radius: 5%; }
+  @media screen and (max-width: 1199px) {
+    #admin_login_form {
+      padding: 5vh; } }
+
+#admin_login_form button {
+  background-color: #00adb5;
+  border: none; }
+
+#admin_login_form button:hover {
+  background-color: #ffffff;
+  color: #00adb5;
+  border: 0.2em solid #00adb5; }
+
+/*# sourceMappingURL=admin_login.css.map */
