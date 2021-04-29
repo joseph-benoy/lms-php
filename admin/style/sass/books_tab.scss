@@ -68,7 +68,7 @@ $light_blue:#00adb5;
 }
 #new_book_page{
     display: none;
-    margin-top: 4%;
+    padding-top: 4vh;
 }
 #add_new_book_form button{
     @include filter_btn($light_blue,#ffffff);

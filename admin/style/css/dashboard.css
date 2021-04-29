@@ -235,7 +235,7 @@ html, body {
 
 #new_book_page {
   display: none;
-  margin-top: 4%; }
+  padding-top: 4vh; }
 
 #add_new_book_form button {
   background-color: #00adb5;
