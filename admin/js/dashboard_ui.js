@@ -37,6 +37,14 @@ function togglePassword(){
         $(`#confirm_new_password`).attr(`type`,`text`);
     }
 }
+function closeProfileTab(){
+    $(`#profile_tab`).toggle();
+    let tab_name = `home_tab`;//change to redirect from discard profile tab;
+    $(`#${tab_name}`).show();
+    closeTabExcept(tab_name);
+    $(`#home_btn`).addClass(`side_nav_active`);
+    closeMobMenu();
+}
 $(document).ready(function(){
     $(`#navIcon`).click(openMobMenu);
     $(`#menu-close-icon`).click(closeMobMenu);
@@ -64,5 +72,7 @@ $(document).ready(function(){
     $(`#add_book_btn`).click(toggleAddNewBookPage);
     $(`#discard_btn`).click(toggleAddNewBookPage);
     $(`#customFile`).change(showFileName);
+//profile tab handler
     $(`#inlineCheckbox1`).change(togglePassword);
+    $(`#discard_btn_profile`).click(closeProfileTab);
 });
