@@ -78,18 +78,3 @@ $light_blue:#00adb5;
     @include filter_btn(#ffffff,$light_blue);
     border: 0.08em solid $light_blue;
 }
-#profile_tab{
-    padding-top: 4vh;
-}
-#profile_tab_header{
-    text-align: right;
-}
-#admin_avatar{
-    max-width: 50%;
-    max-height: 10%;
-    margin-bottom: 50%;
-
-}
-#avatar_row{
-    overflow: hidden;
-}

@@ -184,25 +184,126 @@
                 <div class="container tab" id="settings_tab">
                     <h1>settings_tab</h1>
                 </div>
-                <div class="container tab" id="profile_tab">
-                    <h2>Profile settings</h2>
-                    <div class="container_fluid">
-                        <div class="row" id="avatar_row">
-                            <div class="col-12">
-                                <div class="custom-file text-center" id="change_avatar_grp">
-                                    <input type="file" class="custom-file-input" required id="change_profile">
-                                    <label for="change_profile" id="change_profile_label" data-browse=""><img id="admin_avatar" src="uploads/profile_pic/avatar.png" class="img-thumbnail" alt="profile pic">
-                                    </label>
-                                </div>
+                <div class="container-fluid tab" id="profile_tab">
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-row">
+                                      <div class="col-md-12 mb-3">
+                                        <label for="validationDefault01">Current password</label>
+                                        <input type="password" class="form-control" id="validationDefault01" placeholder="Current password" value="Mark" required>
+                                      </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-3">
+                                          <label for="validationDefault01">New password</label>
+                                          <input type="password" class="form-control" id="validationDefault01" placeholder="New password" value="Mark" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-3">
+                                          <label for="validationDefault01">Confirm New password</label>
+                                          <input type="password" class="form-control" id="validationDefault01" placeholder="Confirm New password" value="Mark" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                            <label class="form-check-label" for="inlineCheckbox1">Show password</label>
+                                          </div>
+                                    </div>
+                                  </form>
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-5">
-                                <label for="fname">First name</label>
-                                <input class="form-control" type="text" id="fname">
-                            </div>
                         </div>
                     </div>
+                    <h2>Profile Settings</h2>
+                    <form id="profile_update_form">
+                        <div class="form-row">
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefault01">First name</label>
+                            <input type="text" class="form-control" id="validationDefault01" placeholder="First name"  required>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefault02">Last name</label>
+                            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" required>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationDefaultUsername">Email</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                </div>
+                                <input type="Email" class="form-control" id="validationDefaultUsername" placeholder="valid email" aria-describedby="inputGroupPrepend2" required>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="validationDefaultUsername">Phone</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend2"><i class="bi bi-telephone"></i></span>
+                                    </div>
+                                    <input type="tel" class="form-control" id="validationDefaultUsername" placeholder="valid phone number" aria-describedby="inputGroupPrepend2" required>
+                                </div>
+                              </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="validationDefault02">Date of birth</label>
+                                <input type="date" class="form-control" id="validationDefault02" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="validationDefault02">House</label>
+                              <input type="text" class="form-control" id="validationDefault02" placeholder="House name/no."  required>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="validationDefault02">Street</label>
+                                <input type="text" class="form-control" id="validationDefault02" placeholder="Street name/no."  required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="validationDefault02">City</label>
+                                <input type="text" class="form-control" id="validationDefault02" placeholder="City name"  required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="validationDefault02">State</label>
+                                <input type="text" class="form-control" id="validationDefault02" placeholder="State name"  required>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label for="validationDefault02">Country</label>
+                                <input type="text" class="form-control" id="validationDefault02" placeholder="Country name"  required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="validationDefault02">PIN</label>
+                                <input type="number" class="form-control" id="validationDefault02" placeholder="PIN number"  required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="validationDefault02">Password</label>
+                                <input type="button" class="form-control" data-toggle="modal" data-target="#exampleModalCenter" id="validationDefault02" value="Change password"  required>
+                            </div>
+                          </div>
+                        <div class="form-row">
+                            <div class="col-6 mb-3">
+                                <button class="btn btn-primary btn-block" id="discard_btn_profile" type="reset">Discard</button>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <button class="btn btn-primary btn-block" id="submit_btn_profile" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </form>                    
                 </div>
                 <div class="container tab" id="logout_tab">
                     <h1>Logout_tab</h1>

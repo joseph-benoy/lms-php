@@ -82,18 +82,4 @@
   color: #00adb5;
   border: 0.08em solid #00adb5; }
 
-#profile_tab {
-  padding-top: 4vh; }
-
-#profile_tab_header {
-  text-align: right; }
-
-#admin_avatar {
-  max-width: 50%;
-  max-height: 10%;
-  margin-bottom: 50%; }
-
-#avatar_row {
-  overflow: hidden; }
-
 /*# sourceMappingURL=books_tab.css.map */

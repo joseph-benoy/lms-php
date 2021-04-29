@@ -1,0 +1,23 @@
+$sidenav_background:#393e46;
+$sidenav_font_color:#eeeeee;
+$light_blue:#00adb5;
+#profile_tab{
+    padding-top: 4vh;
+}
+#admin_avatar{
+    max-width: 40%;
+    max-height: 40%;
+}
+@mixin profile_btn($bg_color,$color) {
+    background-color: $bg_color;
+    font-weight: bold;
+    color:$color;
+}
+#profile_tab button{
+    @include profile_btn($light_blue,#ffffff );
+    border: none;
+}
+#profile_tab button:hover{
+    @include profile_btn(#ffffff,$light_blue);
+    border: 0.08em solid $light_blue;
+}

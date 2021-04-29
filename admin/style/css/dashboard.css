@@ -252,15 +252,20 @@ html, body {
 #profile_tab {
   padding-top: 4vh; }
 
-#profile_tab_header {
-  text-align: right; }
-
 #admin_avatar {
-  max-width: 50%;
-  max-height: 10%;
-  margin-bottom: 50%; }
+  max-width: 40%;
+  max-height: 40%; }
 
-#avatar_row {
-  overflow: hidden; }
+#profile_tab button {
+  background-color: #00adb5;
+  font-weight: bold;
+  color: #ffffff;
+  border: none; }
+
+#profile_tab button:hover {
+  background-color: #ffffff;
+  font-weight: bold;
+  color: #00adb5;
+  border: 0.08em solid #00adb5; }
 
 /*# sourceMappingURL=dashboard.css.map */
