@@ -72,7 +72,17 @@ function validateForm(){
         return false;
     }
 }
+function togglePassword(){
+    let type = $(`#password_input`).attr(`type`);
+    if(!(type===undefined||type=="text")){
+        $(`#password_input`).attr(`type`,`text`);
+    }
+    else{
+        $(`#password_input`).attr(`type`,`password`);
+    }
+}
 $(document).ready(function(){
     $(`#uname`).focusout(checkUsername);
     $(`#password`).focusout(checkPassword);
+    $(`#password_toggle`).click(togglePassword);
 });
