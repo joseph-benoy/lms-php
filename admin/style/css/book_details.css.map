@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,CAAC;EACG,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;EACtB,eAAe,EAAE,MAAM;;AAK3B,gBAAgB;EACZ,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG",
+"sources": ["../sass/book_details.scss"],
+"names": [],
+"file": "book_details.css"
+}

@@ -276,4 +276,14 @@ html, body {
   #file_input_grp_profile {
     margin-top: -10%; } }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
+
+#cover_image_bdp {
+  width: 50%;
+  height: 50%; }
+
 /*# sourceMappingURL=dashboard.css.map */

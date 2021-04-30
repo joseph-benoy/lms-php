@@ -1,7 +1,3 @@
-function openBookDetails(event){
-    $(`#books_tab`).hide();
-    alert(event.data.book_name);
-}
 function getBookDetails(){
     let val = $(`#search`).val();
     let idArray = [];
@@ -14,8 +10,7 @@ function getBookDetails(){
                     idArray.push(this.id);
                 });
                 for(x of idArray){
-                    console.log(x);
-                    $(`#${x}`).click({book_name:x},openBookDetails);
+                    $(`#${x}`).click({book_id:x},openBookDetails);
                 }
             }
         };

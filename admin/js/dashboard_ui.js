@@ -48,17 +48,6 @@ function closeProfileTab(){
 function changeAvatar(event){
     $(`#admin_avatar`).attr(`src`,URL.createObjectURL(event.target.files[0]));
 }
-
-
-
-
-
-
-
-
-
-
-
 $(document).ready(function(){
     $(`#navIcon`).click(openMobMenu);
     $(`#menu-close-icon`).click(closeMobMenu);

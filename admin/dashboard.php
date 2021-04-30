@@ -21,6 +21,7 @@
     <script src="style/bootstrap/popper.min.js"></script>
     <script src="style/bootstrap/bootstrap.min.js"></script>
     <script src="js/dashboard_ui.js"></script>
+    <script src="js/book_details_tab.js"></script>
     <script src="js/search_book.js"></script>
 </head>
 <body>
@@ -77,22 +78,73 @@
                 <!------------------------HOME TAB-------------------------->
                     <h1>Home tab</h1>
                 </div>
-                <div class="container tab" id="new_book_page"><!--Add new book page container-->
+
+                <!--------------------Each book details container------------->
+                <div class="container tab" id="book_details_page">
+                    <h2>Book details</h2>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <img src="uploads/cover_image/48_power.jpg" class="img-thumbnail" alt="cover_image" id="cover_image_bdp">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="table table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Book</strong></td>
+                                            <td id="book_name_bdp">My book</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Author</strong></td>
+                                            <td id="author_name_bdp">Robert Greene</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Publisher</strong></td>
+                                            <td id="publisher_name_bdp">Thornton</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Price</strong></td>
+                                            <td id="price_bdp">550</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Category</strong></td>
+                                            <td id="category_bdp">550</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Description</strong></td>
+                                            <td id="description_bdp">Stoies about power</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Stock</strong></td>
+                                            <td id="description_bdp">5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--Add new book page container-->
+                <div class="container tab" id="new_book_page">
                     <h2>Add new book</h2>
                     <form id="add_new_book_form">
                         <div class="form-row">
-                          <div class="col-md-4 mb-3">
+                        <div class="col-md-4 mb-3">
                             <label for="bookname_input">Book</label>
                             <input type="text" class="form-control" id="bookname_input" placeholder="Book's name"  required>
-                          </div>
-                          <div class="col-md-4 mb-3">
+                        </div>
+                        <div class="col-md-4 mb-3">
                             <label for="author_input">Author</label>
                             <input type="text" class="form-control" id="author_input" placeholder="Author's name" required>
-                          </div>
-                          <div class="col-md-4 mb-3">
+                        </div>
+                        <div class="col-md-4 mb-3">
                             <label for="publisher_input">Publisher</label>
                             <input type="text" class="form-control" id="publisher_input" placeholder="Publisher's name"  required>
-                          </div>
+                        </div>
                         </div>
                         <div class="form-row">
                             <div class="custom-file">
@@ -102,8 +154,8 @@
                         </div>
                         <div class="form-row">
                             <div class="col-md-4 mb-3">
-                              <label for="price_input">Price</label>
-                              <input type="number" class="form-control" id="price_input" placeholder="Price of the book"  required>
+                            <label for="price_input">Price</label>
+                            <input type="number" class="form-control" id="price_input" placeholder="Price of the book"  required>
                             </div>
                             <div class="col-md-4 mb-3">
                                 <label for="category_select">Category</label>
@@ -113,24 +165,25 @@
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
                                 </select>
-                              </div>
-                            <div class="col-md-4 mb-3">
-                              <label for="stock_input">Stock</label>
-                              <input type="number" class="form-control" id="stock_input" placeholder="Current stock"  required>
                             </div>
-                          </div>
-                          <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                            <label for="stock_input">Stock</label>
+                            <input type="number" class="form-control" id="stock_input" placeholder="Current stock"  required>
+                            </div>
+                        </div>
+                        <div class="form-row">
                             <div class="form-group">
                                 <label for="book_description_input">Description of the book</label>
                                 <textarea class="form-control" id="book_description_input" rows="3" cols="120"></textarea>
-                              </div>
-                          </div>
-                          <button class="btn btn-primary" id="discard_btn" type="reset">Discard</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" id="discard_btn" type="reset">Discard</button>
                         <button class="btn btn-primary" type="submit">Submit</button>
                     </form>
                 </div>
+
+                <!-----------------------------Books Tab--------------------->
                 <div class="container tab" id="books_tab">
-                <!------------------------BOOKS TAB-------------------------->
                     <div class="row">
                         <div class="container-fluid">
                             <p id="search_box_label">Search</p>
@@ -173,12 +226,12 @@
                             <div class="row"><!---------result table row--------->
                                 <div class="col-sm-12">
                                     <h4>Results</h4>
-                                    <div id="result_table">Search for some book<div>
+                                    <div id="result_table">Search for some book</div>
                                 </div>
                             </div>
                         </div>
+                        <button class="btn btn-primary" id="add_book_btn"><i class="bi bi-file-earmark-plus"></i></button>
                     </div>
-                    <button class="btn btn-primary" id="add_book_btn"><i class="bi bi-file-earmark-plus"></i></button>
                 </div>
                 <div class="container tab" id="members_tab">
                     <h1>members_tab</h1>
