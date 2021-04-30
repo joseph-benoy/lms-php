@@ -5,7 +5,7 @@
     if($db->check_password($_POST['email'],$_POST['password'])){
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['password'] = $_POST['password'];
-        header("location: dashboard.html");
+        header("location: dashboard.php");
     }
     else{
         header("location: /admin");

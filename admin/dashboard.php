@@ -1,3 +1,10 @@
+<?php declare(strict_types=1);
+    session_start();
+    if(!isset($_SESSION['email'])){
+        header('location: error.html');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +21,7 @@
     <script src="style/bootstrap/popper.min.js"></script>
     <script src="style/bootstrap/bootstrap.min.js"></script>
     <script src="js/dashboard_ui.js"></script>
+    <script src="js/search_book.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -129,7 +137,7 @@
                             <div class="row"><!--search box row-->
                                 <div class="col-12" id="search_box">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder="search for any book" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control" placeholder="search for any book" aria-label="Recipient's username" aria-describedby="basic-addon2" id="search">
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +173,7 @@
                             <div class="row"><!---------result table row--------->
                                 <div class="col-sm-12">
                                     <h1>Result table</h1>
-                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo labore vero quos eaque libero placeat accusantium nam, veniam eius. Praesentium, facilis? Dignissimos repellendus temporibus asperiores consequuntur nemo, accusantium harum eaque.</p>
+                                    <p id="result_table">intial</p>
                                 </div>
                             </div>
                         </div>

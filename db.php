@@ -70,7 +70,6 @@
                 }
             }
             $insert_query.=")";
-            echo $insert_query;
             if((!$statement = $this->connection->prepare($insert_query)))
             {
                 echo "db error : {$this->connection->error}";
@@ -117,6 +116,26 @@
             array_pop($value_array);
             array_push($value_array,$verification_name);
             return $this->insert_into_table("MEMBERSHIP_REQUESTS",$value_array,"ssssssssssssis");
+        }
+        public function search_book($search_value){
+            $search_query = "SELECT NAME,AUTHOR FROM BOOK_DETAILS WHERE NAME LIKE '{$search_value}%'";
+            echo $search_query."<br>";
+            if((!$statement = $this->connection->prepare($search_query)))
+            {
+                return false;
+            }
+            if((!$statement->execute())){
+                return false;
+            }
+            if(!($result=$statement->get_result())){
+                return false;
+            }
+            if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                return false;
+            }
+            else{
+                return $rows;
+            }
         }
     }
     $db = new DB("localhost","joseph","3057","LMS_PHP");
