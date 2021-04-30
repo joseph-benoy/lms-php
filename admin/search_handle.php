@@ -7,7 +7,7 @@
     if($result===false||$result=="0"){
         echo "Nothing found!";
     }else{
-        echo '<table class="table table-hover">
+        echo '<table class="table table-hover" id="result_table">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -18,9 +18,9 @@
         <tbody>';
         $i=1;
         foreach($result as $book){
-            echo '<tr>
+            echo '<tr class="result_rows" id="'.str_replace(' ','-',$book['ID']).'">
             <th scope="row">'.$i++.'</th>
-            <td id="'.$book['NAME'].'">'.$book['NAME'].'</td>
+            <td>'.$book['NAME'].'</td>
             <td>'.$book['AUTHOR'].'</td>
           </tr>';
         }
