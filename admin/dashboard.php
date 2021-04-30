@@ -172,8 +172,8 @@
                             </div>
                             <div class="row"><!---------result table row--------->
                                 <div class="col-sm-12">
-                                    <h1>Result table</h1>
-                                    <p id="result_table">intial</p>
+                                    <h4>Results</h4>
+                                    <div id="result_table">Search for some book<div>
                                 </div>
                             </div>
                         </div>

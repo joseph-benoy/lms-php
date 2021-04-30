@@ -7,8 +7,24 @@
     if($result===false||$result=="0"){
         echo "Nothing found!";
     }else{
+        echo '<table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Book</th>
+            <th scope="col">Author</th>
+          </tr>
+        </thead>
+        <tbody>';
+        $i=1;
         foreach($result as $book){
-            echo "<li> Book name = {$book['NAME']} Author name = {$book['AUTHOR']}</li>";
+            echo '<tr>
+            <th scope="row">'.$i++.'</th>
+            <td id="'.$book['NAME'].'">'.$book['NAME'].'</td>
+            <td>'.$book['AUTHOR'].'</td>
+          </tr>';
         }
+        echo '</tbody>
+        </table>';
     }
 ?>

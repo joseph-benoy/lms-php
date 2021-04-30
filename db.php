@@ -119,7 +119,6 @@
         }
         public function search_book($search_value){
             $search_query = "SELECT NAME,AUTHOR FROM BOOK_DETAILS WHERE NAME LIKE '{$search_value}%'";
-            echo $search_query."<br>";
             if((!$statement = $this->connection->prepare($search_query)))
             {
                 return false;

@@ -14,6 +14,7 @@ function getBookDetails(){
     else{
         $(`#result_table`).html("Search for some book in the library!");
     }
+    
 }
 $(document).ready(function(){
     $(`#search`).on(`input`,getBookDetails);
