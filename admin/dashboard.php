@@ -84,7 +84,7 @@
                     <h2>Book details</h2>
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col">
+                            <div class="col text-center">
                                 <img src="uploads/cover_image/48_power.jpg" class="img-thumbnail" alt="cover_image" id="cover_image_bdp">
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                                         </tr>
                                         <tr>
                                             <td><strong>Category</strong></td>
-                                            <td id="category_bdp">550</td>
+                                            <td id="category_bdp">Horror</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Description</strong></td>
@@ -122,6 +122,17 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <button class="btn btn-primary btn-block">Issue</button>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-primary btn-block">Remove</button>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-primary btn-block">Back</button>
                             </div>
                         </div>
                     </div>

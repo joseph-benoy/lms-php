@@ -282,8 +282,28 @@ html, body {
   box-sizing: border-box;
   scroll-behavior: smooth; }
 
+@media screen and (max-width: 1199px) {
+  #book_details_page {
+    padding-top: 1.5vh; } }
+
 #cover_image_bdp {
-  width: 50%;
-  height: 50%; }
+  width: 9%;
+  height: 100%; }
+  @media screen and (max-width: 1199px) {
+    #cover_image_bdp {
+      width: 50%;
+      height: 100%; } }
+
+#book_details_page button {
+  background-color: #00adb5;
+  font-weight: bold;
+  color: #ffffff;
+  border: none; }
+
+#book_details_page button:hover {
+  background-color: #ffffff;
+  font-weight: bold;
+  color: #00adb5;
+  border: 0.08em solid #00adb5; }
 
 /*# sourceMappingURL=dashboard.css.map */

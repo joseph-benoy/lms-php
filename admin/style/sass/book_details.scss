@@ -7,7 +7,28 @@
 $sidenav_background:#393e46;
 $sidenav_font_color:#eeeeee;
 $light_blue:#00adb5;
+#book_details_page{
+    @media screen and (max-width:1199px) {
+        padding-top: 1.5vh;
+    }
+}
 #cover_image_bdp{
-    width: 50%;
-    height: 50%;
+    width: 9%;
+    height: 100%;
+    @media screen and (max-width:1199px) {
+        width: 50%;
+        height: 100%;
+    }
+}
+#book_details_page button{
+    background-color: $light_blue;
+    font-weight: bold;
+    color:#ffffff;
+    border: none;
+}
+#book_details_page button:hover{
+    background-color: #ffffff;
+    font-weight: bold;
+    color:$light_blue;
+    border: 0.08em solid $light_blue;
 }
