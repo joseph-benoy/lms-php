@@ -5,15 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lymas | Admin login</title>
-    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="style/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style/css/user_login.css">
+    <script src="style/bootstrap/jquery.min.js"></script>
+    <script src="style/bootstrap/popper.min.js"></script>
+    <script src="style/bootstrap/bootstrap.min.js"></script>
     <script src="js/user_login.js"></script>
 </head>
 <body>
-    <h1>User login</h1>
-    <form action="user_login.php" method="post" id="loginForm" onsubmit="return validateForm();">
-        <input type="email" name="email" id="uname" placeholder="Enter your E-Mail"><br>
-        <input type="password" name="password" id="password" placeholder="Enter your password"><br>
-        <input type="submit" value="login" name="login_submit" id="submitBtn">
-    </form>
+    <div id="login_header">
+        <h1>LYMAS</h1>
+    </div>
+    <div id="login">
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="admin_login_form" method="post" action="user_login.php"  onsubmit="return validateForm();">
+                            <div class="form-row">
+                              <div class="col-md-12 mb-3">
+                                <label for="email_input">Username</label>
+                                <div class="input-group">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend2-login">@</span>
+                                  </div>
+                                  <input type="email" name="email" class="form-control" id="email_input" placeholder="Registered email" aria-describedby="inputGroupPrepend2-login" required>
+                                </div>
+                                <div class="input_log" id="username_log">
+                                    <p id="uname_success" class="success_log">Looks good &check;</p>
+                                    <p id="uname_failed" class="failed_log">Oops! Wrong username &times;</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="password_input">Password</label>
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend3-login"><i class="bi bi-key"></i></span>
+                                      </div>
+                                      <input type="password" name="password" class="form-control" id="password_input" placeholder="Your password" aria-describedby="inputGroupPrepend3-login" required>
+                                    </div>
+                                    <div class="input_log" id="password_log">
+                                        <p id="password_success" class="success_log">Right password &check;</p>
+                                        <p id="password_failed" class="failed_log">Oops! Wrong password &times;</p>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="password_toggle">
+                                    <label class="custom-control-label" for="password_toggle">Show password</label>
+                                  </div>
+                            </div>
+                            <button class="btn btn-primary btn-block" type="submit" id="signin_btn">Sign In</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

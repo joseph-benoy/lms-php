@@ -23,48 +23,54 @@ let passFlag = function(){
     }
 }();
 function checkUsername(){
-    if(!($(`uname`).val()==="")){
-        console.log("USER NAME CHECKING!!!");
+    if(!($(`#email_input`).val()==="")){
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
             if(this.readyState===4&&this.status===200){
-                console.log(this.responseText);
                if(this.responseText=="0"){   
                     unameFlag(false);
+                    $(`#uname_failed`).show();
+                    $(`#uname_success`).hide();
                 }
                 else{
-                    $(`#password`).prop(`disabled`,false);
+                    $(`#password_input`).prop(`disabled`,false);
                     unameFlag(true);
+                    $(`#uname_success`).show();
+                    $(`#uname_failed`).hide();
                 }
             }
         };
         xhttp.open(`POST`,'user_auth.php',true);
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
-        xhttp.send(`email=${$(`#uname`).val()}`);
+        xhttp.send(`email=${$(`#email_input`).val()}`);
     }
 }
 function checkPassword(){
-    if(!($(`uname`).val()===""||$(`#password`).val()===""||unameFlag()===false)){
-        console.log("PASSWORD CHECKING!!!!!!!!!!");
+    if(!($(`#email_input`).val()===""||$(`#password_input`).val()===""||unameFlag()===false)){
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
             if(this.readyState===4&&this.status===200){
-                console.log(this.responseText);
                 if(this.responseText=="0"){
                     passFlag(false);
+                    $(`#password_failed`).show();
+                    $(`#password_success`).hide();
                 }
                 else{
                     unameFlag(true);
                     passFlag(true);
+                    $(`#password_success`).show();
+                    $(`#password_failed`).hide();
                 }
             }
         };
         xhttp.open(`POST`,`user_auth.php`,true);
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
-        xhttp.send(`email=${$(`#uname`).val()}&password=${$(`#password`).val()}`);
+        xhttp.send(`email=${$(`#email_input`).val()}&password=${$(`#password_input`).val()}`);
     }
 }
 function validateForm(){
+    checkUsername();
+    checkPassword();
     if(unameFlag()&&passFlag()){
         return true;
     }
@@ -72,7 +78,17 @@ function validateForm(){
         return false;
     }
 }
+function togglePassword(){
+    let type = $(`#password_input`).attr(`type`);
+    if(!(type===undefined||type=="text")){
+        $(`#password_input`).attr(`type`,`text`);
+    }
+    else{
+        $(`#password_input`).attr(`type`,`password`);
+    }
+}
 $(document).ready(function(){
-    $(`#uname`).focusout(checkUsername);
-    $(`#password`).focusout(checkPassword);
+    $(`#email_input`).focusout(checkUsername);
+    $(`#password_input`).focusout(checkPassword);
+    $(`#password_toggle`).click(togglePassword);
 });
