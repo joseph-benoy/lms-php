@@ -132,7 +132,7 @@
                                 <button class="btn btn-primary btn-block">Remove</button>
                             </div>
                             <div class="col-4">
-                                <button class="btn btn-primary btn-block">Back</button>
+                                <button class="btn btn-primary btn-block" id="back_btn_bdp">Back</button>
                             </div>
                         </div>
                     </div>
