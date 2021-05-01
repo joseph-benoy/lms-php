@@ -159,6 +159,75 @@
                 return $rows;
             }
         }
+        public function filter_books($category_value,$author_value){
+            $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE CATEGORY={$category_value} AND AUTHOR={$author_value}";
+            if((!$statement = $this->connection->prepare($search_query)))
+            {
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if((!$statement->execute())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($result=$statement->get_result())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            else{
+                return $rows;
+            }
+        }
+        public function filter_books_by_category($category_value){
+            $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE CATEGORY={$category_value}";
+            if((!$statement = $this->connection->prepare($search_query)))
+            {
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if((!$statement->execute())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($result=$statement->get_result())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            else{
+                return $rows;
+            }
+        }
+        public function filter_books_by_author($author_value){
+            $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE AUTHOR={$author_value}";
+            if((!$statement = $this->connection->prepare($search_query)))
+            {
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if((!$statement->execute())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($result=$statement->get_result())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            else{
+                return $rows;
+            }
+        }
     }
     $db = new DB("localhost","joseph","3057","LMS_PHP");
 ?>
