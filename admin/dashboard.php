@@ -97,6 +97,139 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal" tabindex="-1" role="dialog" id="rename_book_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Rename book</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Rename book</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Rename</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" id="rename_author_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Change author</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Rename book</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" id="rename_publisher_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Change publisher</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Change  Publisher</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" id="change_price_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Change price</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Change  Price</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" id="change_category_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Change category</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Change  category</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" id="change_description_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Change description</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Change  description</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" id="change_stock_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Change stock</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Change  stock</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
                 <!--------------------Each book details container------------->
                 <div class="container tab" id="book_details_page">
                     <h2>Book details</h2>
@@ -110,33 +243,33 @@
                             <div class="col-12">
                                 <table class="table table-hover">
                                     <tbody>
-                                        <tr>
+                                        <tr  id="book_name_bdp">
                                             <td><strong>Book</strong></td>
-                                            <td id="book_name_bdp">My book</td>
+                                            <td>My book</td>
                                         </tr>
-                                        <tr>
+                                        <tr id="author_name_bdp">
                                             <td><strong>Author</strong></td>
-                                            <td id="author_name_bdp">Robert Greene</td>
+                                            <td>Robert Greene</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Publisher</strong></td>
                                             <td id="publisher_name_bdp">Thornton</td>
                                         </tr>
-                                        <tr>
+                                        <tr id="price_bdp">
                                             <td><strong>Price</strong></td>
-                                            <td id="price_bdp">550</td>
+                                            <td>550</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Category</strong></td>
-                                            <td id="category_bdp">Horror</td>
+                                            <td id="category_bdp"><strong>Category</strong></td>
+                                            <td>Horror</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Description</strong></td>
-                                            <td id="description_bdp">Stoies about power</td>
+                                            <td id="description_bdp"><strong>Description</strong></td>
+                                            <td>Stoies about power</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Stock</strong></td>
-                                            <td id="description_bdp">5</td>
+                                            <td id="stock_bdp"><strong>Stock</strong></td>
+                                            <td>5</td>
                                         </tr>
                                     </tbody>
                                 </table>
