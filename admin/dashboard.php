@@ -78,7 +78,25 @@
                 <!------------------------HOME TAB-------------------------->
                     <h1>Home tab</h1>
                 </div>
-
+                <div class="modal" tabindex="-1" role="dialog" id="remove_book_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Remove book</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure to remove the book?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Remove</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
                 <!--------------------Each book details container------------->
                 <div class="container tab" id="book_details_page">
                     <h2>Book details</h2>
@@ -129,7 +147,7 @@
                                 <button class="btn btn-primary btn-block">Issue</button>
                             </div>
                             <div class="col-4">
-                                <button class="btn btn-primary btn-block">Remove</button>
+                                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#remove_book_modal">Remove</button>                            
                             </div>
                             <div class="col-4">
                                 <button class="btn btn-primary btn-block" id="back_btn_bdp">Back</button>
