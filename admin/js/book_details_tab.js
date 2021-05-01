@@ -26,4 +26,7 @@ function openBookDetails(event){
     $(`#book_name_bdp`).click(function(){
         $('#rename_book_modal').modal('show');
     });
+    $(`#change_cover_input`).change(function(event){
+        $(`#cover_image_bdp`).attr(`src`,URL.createObjectURL(event.target.files[0]));
+    });
 }

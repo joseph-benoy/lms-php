@@ -107,10 +107,13 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Rename book</p>
+                            <div class="form-group">
+                                <label for="rename_book_input">Book name</label>
+                                <input type="text" class="form-control" id="change_book_input"  placeholder="Enter book's name" value="My book">
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Rename</button>
+                            <button type="button" class="btn btn-primary" id="change_book_submit">Rename</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -126,10 +129,13 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Rename book</p>
+                            <div class="form-group">
+                                <label for="rename_author_input">Author's name</label>
+                                <input type="text" class="form-control" id="rename_author_input"  placeholder="Enter authors's name" value="Robert Greene">
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary" id="change_author_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -145,10 +151,13 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Change  Publisher</p>
+                            <div class="form-group">
+                                <label for="rename_publisher_input">Publisher's name</label>
+                                <input type="text" class="form-control" id="rename_publisher_input"  placeholder="Enter publishers's name" value="Hacehtte">
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary" id="change_publisher_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -164,10 +173,13 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Change  Price</p>
+                            <div class="form-group">
+                                <label for="change_price_input">Price</label>
+                                <input type="number" class="form-control" id="change_price_input"  placeholder="Enter the price" value="500">
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary" id="change_price_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -183,10 +195,19 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Change  category</p>
+                            <div class="form-group">
+                                <label for="change_category_input">Category</label>
+                                <select class="form-control" id="change_category_input">
+                                <option hidden selected >Category</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary" id="change_category_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -202,10 +223,13 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Change  description</p>
+                            <div class="form-group">
+                                <label for="change_description_input">Description</label>
+                                <textarea class="form-control" id="change_description_input" rows="3" cols="15">Stories about power</textarea>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary" id="change_description_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -221,10 +245,13 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Change  stock</p>
+                            <div class="form-group">
+                                <label for="change_stock_input">Stock</label>
+                                <input type="number" class="form-control" id="change_stock_input"  placeholder="Enter the stock" value="5">
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-primary" id="change_stock_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -239,11 +266,19 @@
                                 <img src="uploads/cover_image/48_power.jpg" class="img-thumbnail" alt="cover_image" id="cover_image_bdp">
                             </div>
                         </div>
+                        <div class="row text-center">
+                            <div class="col">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="change_cover_input">
+                                    <label class="custom-file-label" for="change_cover_input">Change cover image  <i class="bi bi-pencil-square"></i></label>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-12">
                                 <table class="table table-hover">
                                     <tbody>
-                                        <tr  id="book_name_bdp">
+                                        <tr id="book_name_bdp">
                                             <td><strong>Book</strong></td>
                                             <td>My book</td>
                                         </tr>
@@ -259,16 +294,16 @@
                                             <td><strong>Price</strong></td>
                                             <td>550</td>
                                         </tr>
-                                        <tr>
-                                            <td id="category_bdp"><strong>Category</strong></td>
+                                        <tr id="category_bdp">
+                                            <td><strong>Category</strong></td>
                                             <td>Horror</td>
                                         </tr>
-                                        <tr>
-                                            <td id="description_bdp"><strong>Description</strong></td>
+                                        <tr id="description_bdp">
+                                            <td><strong>Description</strong></td>
                                             <td>Stoies about power</td>
                                         </tr>
-                                        <tr>
-                                            <td id="stock_bdp"><strong>Stock</strong></td>
+                                        <tr id="stock_bdp">
+                                            <td><strong>Stock</strong></td>
                                             <td>5</td>
                                         </tr>
                                     </tbody>

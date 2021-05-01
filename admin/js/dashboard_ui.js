@@ -79,4 +79,5 @@ $(document).ready(function(){
     $(`#inlineCheckbox1`).change(togglePassword);
     $(`#discard_btn_profile`).click(closeProfileTab);
     $(`#avatar_file`).change(changeAvatar);
+
 });
