@@ -269,7 +269,7 @@
                         <div class="row text-center">
                             <div class="col">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="change_cover_input">
+                                    <input type="file" accept="image/*" class="custom-file-input" id="change_cover_input">
                                     <label class="custom-file-label" for="change_cover_input">Change cover image  <i class="bi bi-pencil-square"></i></label>
                                 </div>
                             </div>
@@ -286,9 +286,9 @@
                                             <td><strong>Author</strong></td>
                                             <td>Robert Greene</td>
                                         </tr>
-                                        <tr>
+                                        <tr id="publisher_name_bdp">
                                             <td><strong>Publisher</strong></td>
-                                            <td id="publisher_name_bdp">Thornton</td>
+                                            <td>Thornton</td>
                                         </tr>
                                         <tr id="price_bdp">
                                             <td><strong>Price</strong></td>

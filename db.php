@@ -136,6 +136,29 @@
                 return $rows;
             }
         }
+        public function get_all_books(){
+            $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS";
+            if((!$statement = $this->connection->prepare($search_query)))
+            {
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if((!$statement->execute())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($result=$statement->get_result())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            else{
+                return $rows;
+            }
+        }
     }
     $db = new DB("localhost","joseph","3057","LMS_PHP");
 ?>
