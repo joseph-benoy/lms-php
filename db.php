@@ -262,6 +262,29 @@
                 return $row;
             }
         }
+        public function get_category_list(){
+            $search_query = "SELECT CATEGORY FROM CATEGORY_DETAILS";
+            if((!$statement = $this->connection->prepare($search_query)))
+            {
+                return false;
+            }
+            if((!$statement->execute())){
+                return false;
+            }
+            if(!($result=$statement->get_result())){
+                return false;
+            }
+            if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                return false;
+            }
+            else{
+                $row = [];
+                foreach($rows as $x){
+                    array_push($row,$x['CATEGORY']);
+                }
+                return $row;
+            }
+        }
     }
     $db = new DB("localhost","joseph","3057","LMS_PHP");
 ?>

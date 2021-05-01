@@ -345,7 +345,7 @@
                         </div>
                         <div class="form-row">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile_books" required>
+                                <input type="file" class="custom-file-input" id="customFile_books" accept="image/*" required>
                                 <label class="custom-file-label" for="customFile_books" id="file_name_label">Choose a cover image</label>
                             </div>
                         </div>
@@ -358,9 +358,6 @@
                                 <label for="category_select">Category</label>
                                 <select class="custom-select" id="category_select">
                                     <option selected hidden>Choose a category</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
                                 </select>
                             </div>
                             <div class="col-md-4 mb-3">
@@ -375,7 +372,7 @@
                             </div>
                         </div>
                         <button class="btn btn-primary" id="discard_btn" type="reset">Discard</button>
-                        <button class="btn btn-primary" type="submit">Submit</button>
+                        <button class="btn btn-primary" type="submit" id="new_book_submit">Submit</button>
                     </form>
                 </div>
 

@@ -37,10 +37,22 @@ function openTab(event){
 }
 function toggleAddNewBookPage(){
     $(`#new_book_page`).toggle();
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange =function(){
+        if(this.readyState===4&&this.status===200){
+            let category_array = JSON.parse(this.responseText);
+            for(x of category_array){
+                let new_option = $(`<option value="${x}">${x}</option>`);
+                $(`#category_select`).append(new_option);
+            }
+        }
+    };
+    xhttp.open(`GET`,`get_categories.php`,true);
+    xhttp.send();
     $(`#books_tab`).toggle();
 }
 function showFileName(){
-    let file_name = $(`#customFile`).val().replace("C:\\fakepath\\","");
+    let file_name = $(`#customFile_books`).val().replace("C:\\fakepath\\","");
     if(!(file_name===undefined||file_name==="")){
         $(`#file_name_label`).html(file_name);
     }
