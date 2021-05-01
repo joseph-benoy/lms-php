@@ -41,13 +41,21 @@ function listAllBooks(){
     xhttp.send();
 }
 function filterList(){
+    let idArray = [];
     let categoryValue = $(`#category_select_filter`).val();
-    let authorValue = $(`#category_select_filter`).val();
-    if(!(categoryValue===""&&authorValue==="")){//both values
+    let authorValue = $(`#author_select_filter`).val();
+    if(categoryValue=="Category"){
+        categoryValue = "";
+    }
+    if(authorValue=="Author"){
+        authorValue = "";
+    }
+    if(categoryValue!==""&&authorValue!==""){//both values
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange =function(){
             if(this.readyState===4&&this.status===200){
                 $(`#result_table`).html(this.responseText);
+                console.log(this.responseText);
                 $(`.result_rows`).each(function(){
                     idArray.push(this.id);
                 });
@@ -64,6 +72,7 @@ function filterList(){
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange =function(){
             if(this.readyState===4&&this.status===200){
+                console.log(this.responseText);
                 $(`#result_table`).html(this.responseText);
                 $(`.result_rows`).each(function(){
                     idArray.push(this.id);
@@ -78,26 +87,23 @@ function filterList(){
         xhttp.send(`category_value=${categoryValue}&type=2`);
     }   
     else if(categoryValue===""&&authorValue!==""){//only author value
-        let categoryValue = $(`#category_select_filter`).val();
-        let authorValue = $(`#category_select_filter`).val();
-        if(!(categoryValue===""&&authorValue==="")){//both values
-            let xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange =function(){
-                if(this.readyState===4&&this.status===200){
-                    $(`#result_table`).html(this.responseText);
-                    $(`.result_rows`).each(function(){
-                        idArray.push(this.id);
-                    });
-                    for(x of idArray){
-                        $(`#${x}`).click({book_id:x},openBookDetails);
-                    }
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange =function(){
+            if(this.readyState===4&&this.status===200){
+                console.log(this.responseText);
+                $(`#result_table`).html(this.responseText);
+                $(`.result_rows`).each(function(){
+                    idArray.push(this.id);
+                });
+                for(x of idArray){
+                    $(`#${x}`).click({book_id:x},openBookDetails);
                 }
-            };
-            xhttp.open(`POST`,`filter_search.php`,true);
-            xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
-            xhttp.send(`author_value=${authorValue}&type=3`);
-    }
- 
+            }
+        };
+        xhttp.open(`POST`,`filter_search.php`,true);
+        xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
+        xhttp.send(`author_value=${authorValue}&type=3`);
+    } 
 }
 $(document).ready(function(){
     $(`#search`).on(`input`,getBookDetails);

@@ -13,6 +13,19 @@ function openTab(event){
     $(`#${tab_name}`).show();
     closeTabExcept(tab_name);
     $(this).addClass(`side_nav_active`);
+    if(tab_name==="books_tab"){
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange =function(){
+            if(this.readyState===4&&this.status===200){
+                let select_obj = JSON.parse(this.responseText);
+                let category_array = select_obj[0];
+                let author_array = select_obj[1];
+
+            }
+        };
+        xhttp.open(`GET`,`select_handle.php`,true);
+        xhttp.send();
+    }
     closeMobMenu();
 }
 function toggleAddNewBookPage(){

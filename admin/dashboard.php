@@ -398,17 +398,11 @@
                                         <div class="col-sm-4">
                                             <select class="custom-select form-select-lg mb-3" aria-label=".form-select-lg example" id="category_select_filter">
                                                 <option hidden selected>Category</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
                                             </select>
                                         </div>
                                         <div class="col-sm-4">
                                             <select class="custom-select form-select-lg mb-3" aria-label=".form-select-lg example" id="author_select_filter">
                                                 <option hidden selected>Author</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
                                             </select>
                                         </div>
                                         <div class="col-sm-2" id="filter_apply_box">

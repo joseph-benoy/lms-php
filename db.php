@@ -160,7 +160,8 @@
             }
         }
         public function filter_books($category_value,$author_value){
-            $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE CATEGORY={$category_value} AND AUTHOR={$author_value}";
+            echo "both<br>";
+            $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE CATEGORY='{$category_value}' AND AUTHOR='{$author_value}'";
             if((!$statement = $this->connection->prepare($search_query)))
             {
                 echo "db error : {$this->connection->error}";
@@ -183,7 +184,8 @@
             }
         }
         public function filter_books_by_category($category_value){
-            $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE CATEGORY={$category_value}";
+            echo "category<br>";
+            $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE CATEGORY='{$category_value}'";
             if((!$statement = $this->connection->prepare($search_query)))
             {
                 echo "db error : {$this->connection->error}";
@@ -206,7 +208,7 @@
             }
         }
         public function filter_books_by_author($author_value){
-            $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE AUTHOR={$author_value}";
+            $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE AUTHOR='{$author_value}'";
             if((!$statement = $this->connection->prepare($search_query)))
             {
                 echo "db error : {$this->connection->error}";
@@ -226,6 +228,60 @@
             }
             else{
                 return $rows;
+            }
+        }
+        public function get_all_authors(){
+            $search_query = "SELECT AUTHOR FROM BOOK_DETAILS";
+            if((!$statement = $this->connection->prepare($search_query)))
+            {
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if((!$statement->execute())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($result=$statement->get_result())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            else{
+                $row = [];
+                foreach($rows as $x){
+                    array_push($row,$x['AUTHOR']);
+                }
+                return $row;
+            }
+        }
+        public function get_all_categories(){
+            $search_query = "SELECT CATEGORY FROM BOOK_DETAILS";
+            if((!$statement = $this->connection->prepare($search_query)))
+            {
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if((!$statement->execute())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($result=$statement->get_result())){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                echo "db error : {$this->connection->error}";
+                return false;
+            }
+            else{
+                $row = [];
+                foreach($rows as $x){
+                    array_push($row,$x['CATEGORY']);
+                }
+                return $row;
             }
         }
     }
