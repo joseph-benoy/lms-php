@@ -20,7 +20,14 @@ function openTab(event){
                 let select_obj = JSON.parse(this.responseText);
                 let category_array = select_obj[0];
                 let author_array = select_obj[1];
-
+                for(x of category_array){
+                    let new_option = $(`<option value="${x}">${x}</option>`);
+                    $(`#category_select_filter`).append(new_option);
+                }
+                for(x of author_array){
+                    let new_option = $(`<option value="${x}">${x}</option>`);
+                    $(`#author_select_filter`).append(new_option);
+                }
             }
         };
         xhttp.open(`GET`,`select_handle.php`,true);
