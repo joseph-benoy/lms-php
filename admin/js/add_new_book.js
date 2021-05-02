@@ -1,12 +1,12 @@
 function addNewBook(){
-    let obj = {
+      let obj = {
         name:`${$(`#bookname_input`).val()}`,
         author:`${$(`#author_input`).val()}`,
         publisher:`${$(`#publisher_input`).val()}`,
         cover_image_location:`48_power.jpg`,
         price:`${$(`#price_input`).val()}`,
         category:`${$(`#category_select`).val()}`,
-        descritpion:`${$(`#book_description_input`).val()}`,
+        description:`${$(`#customFile_books`).val().replace("C:\\fakepath\\","")}`,
         stock:`${$(`#stock_input`).val()}`
     };
     let json_obj = JSON.stringify(obj);
@@ -20,5 +20,22 @@ function addNewBook(){
     xhttp.open(`POST`,'add_book.php',true);
     xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
     xhttp.send(`json_obj=${json_obj}`);
-    alert('lll');
+
+
+    var fd = new FormData();
+    var files = $('#customFile_books')[0].files;
+    if(files.length > 0 ){
+        fd.append('file',files[0]);
+        $.ajax({
+            url: 'add_book.php',
+            type: 'post',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                console.log("Filllllllle senttttttttttttt!");
+                console.log(response);
+            },
+        });
+    }
 }

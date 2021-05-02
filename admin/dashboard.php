@@ -329,7 +329,7 @@
                 <!--Add new book page container-->
                 <div class="container tab" id="new_book_page">
                     <h2>Add new book</h2>
-                    <form id="add_new_book_form">
+                    <form id="add_new_book_form" enctype="multipart/form-data">
                         <div class="form-row">
                         <div class="col-md-4 mb-3">
                             <label for="bookname_input">Book</label>
