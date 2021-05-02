@@ -20,8 +20,6 @@ function addNewBook(){
     xhttp.open(`POST`,'add_book.php',true);
     xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
     xhttp.send(`json_obj=${json_obj}`);
-
-
     var fd = new FormData();
     var files = $('#customFile_books')[0].files;
     if(files.length > 0 ){
