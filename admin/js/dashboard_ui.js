@@ -33,6 +33,7 @@ function openTab(event){
         xhttp.open(`GET`,`select_handle.php`,true);
         xhttp.send();
     }
+    $(`#new_book_submit`).click(addNewBook);
     closeMobMenu();
 }
 function toggleAddNewBookPage(){

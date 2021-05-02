@@ -23,6 +23,7 @@
     <script src="js/dashboard_ui.js"></script>
     <script src="js/book_details_tab.js"></script>
     <script src="js/search_book.js"></script>
+    <script src="js/add_new_book.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -372,8 +373,8 @@
                             </div>
                         </div>
                         <button class="btn btn-primary" id="discard_btn" type="reset">Discard</button>
-                        <button class="btn btn-primary" type="submit" id="new_book_submit">Submit</button>
                     </form>
+                    <button class="btn btn-primary" id="new_book_submit">Submit</button>
                 </div>
 
                 <!-----------------------------Books Tab--------------------->
