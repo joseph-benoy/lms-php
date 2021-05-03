@@ -291,6 +291,29 @@
                         </div>
                     </div>
                 </div>
+                <!------------------update cover image modal------------------------->
+                <div class="modal" tabindex="-1" role="dialog" id="change_cover_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Change cover image</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="change_cover_input" accept="image/*">
+                                <label class="custom-file-label" for="change_cover_input">Choose file</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="change_cover_submit">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
                 <!--------------------Each book details container------------->
                 <div class="container tab" id="book_details_page">
                     <h2>Book details</h2>
@@ -298,14 +321,6 @@
                         <div class="row">
                             <div class="col text-center">
                                 <img src="uploads/cover_image/48_power.jpg" class="img-thumbnail" alt="cover_image" id="cover_image_bdp">
-                            </div>
-                        </div>
-                        <div class="row text-center">
-                            <div class="col">
-                                <div class="custom-file">
-                                    <input type="file" accept="image/*" class="custom-file-input" id="change_cover_input">
-                                    <label class="custom-file-label" for="change_cover_input">Change cover image</label>
-                                </div>
                             </div>
                         </div>
                         <div class="row">
