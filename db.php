@@ -307,6 +307,32 @@
                 return $row;
             }
         }
+        public function select_book($book_id){
+            $search_query = "SELECT * from BOOK_DETAILS WHERE ID=?";
+            if((!$statement = $this->connection->prepare($search_query))){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            if((!$statement=$this->connection->bind_param($book_id,'s'))){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            if(!($result=$statement->get_result())){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            else{
+                return $rows;
+            }
+        }
     }
     $db = new DB("localhost","joseph","3057","LMS_PHP");
 ?>

@@ -13,7 +13,7 @@ function openBookDetails(event){
             }
         }
     };
-    xhttp.open('POST','admin/get_book.php',true);
+    xhttp.open('POST','get_book.php',true);
     xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
     xhttp.send(`book_id=${event.data.book_id}`);
     $(`#back_btn_bdp`).click(function(){
