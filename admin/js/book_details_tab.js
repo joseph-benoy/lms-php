@@ -56,7 +56,7 @@ function openBookDetails(event){
         xhttp.onreadystatechange = function(){
             if(this.readyState===4&&this.status===200){
                 if(this.responseText=="0"){
-                    console.log("oombi!");
+                    console.log("error");
                 }
                 else{
                     $(`#book_removal_message`).html(`Successfully removed!`);
@@ -66,6 +66,9 @@ function openBookDetails(event){
                         $(`#book_details_page`).hide();
                         $(`#books_tab`).show();
                         listAllBooks();
+                        $(`#remove_book_btn`).show();
+                        $(`#book_removal_message`).html(`Are you sure?`);
+                        $(`#book_removal_cancel`).html('Cancel');
                     });
                 }
             }
