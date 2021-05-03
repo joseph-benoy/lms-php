@@ -115,7 +115,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="change_book_submit">Rename</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="change_book_submit">Rename</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="change_author_submit">Save changes</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="change_author_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -159,7 +159,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="change_publisher_submit">Save changes</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="change_publisher_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="change_price_submit">Save changes</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="change_price_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -209,7 +209,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="change_category_submit">Save changes</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="change_category_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -231,7 +231,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="change_description_submit">Save changes</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="change_description_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -253,7 +253,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="change_stock_submit">Save changes</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" id="change_stock_submit">Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>

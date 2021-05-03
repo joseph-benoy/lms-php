@@ -1,6 +1,4 @@
-function openBookDetails(event){
-    $(`#books_tab`).hide();
-    $(`#book_details_page`).show();
+function displayBook(book_id){
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if(this.readyState===4&&this.status===200){
@@ -22,7 +20,12 @@ function openBookDetails(event){
     };
     xhttp.open('POST','get_book.php',true);
     xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
-    xhttp.send(`book_id=${event.data.book_id}`);
+    xhttp.send(`book_id=${book_id}`);
+}
+function openBookDetails(event){
+    $(`#books_tab`).hide();
+    $(`#book_details_page`).show();
+    displayBook(event.data.book_id);
     $(`#back_btn_bdp`).click(function(){
         $(`#book_details_page`).hide();
         $(`#books_tab`).show();
@@ -81,17 +84,19 @@ function openBookDetails(event){
         let value = $(`#change_book_input`).val();
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
-            if(this.readyState===4&&this.status===20){
+            if(this.readyState===4&&this.status===200){
                 if(this.responseText==="1"){
-                    $(`#rename_book_modal`).modal(`hide`);
+                    displayBook(event.data.book_id);
+                    $(`#change_book_input`).css(`color`,`black`);
                 }
                 else{
                     $(`#change_book_input`).css(`color`,`crimson`);
+                    $(`#rename_book_modal`).modal(`show`);
                 }
             }
         };
         xhttp.open(`POST`,'update_book.php',true);
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
-        xhttp.send(`book_id=${event.data.book_id}&column_name=NAME&value=${value}`);
+        xhttp.send(`book_id=${event.data.book_id}&column_name=NAME&value=${value}&type=s`);
     });
 }
