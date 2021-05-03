@@ -154,6 +154,6 @@ function openBookDetails(event){
         };
         xhttp.open(`POST`,'update_book.php',true);
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
-        xhttp.send(`book_id=${event.data.book_id}&column_name=PUBLISHER&value=${value}&type=s`);
+        xhttp.send(`book_id=${event.data.book_id}&column_name=PRICE&value=${value}&type=i`);
     });
 }
