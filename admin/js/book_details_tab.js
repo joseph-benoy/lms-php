@@ -15,7 +15,8 @@ function openBookDetails(event){
                 $(`#price_value`).html(json_obj[0]['PRICE']);
                 $(`#category_value`).html(json_obj[0]['CATEGORY']);
                 $(`#stock_value`).html(json_obj[0]['STOCK']);
-                $(`#cover_image_bdp`).src = json_obj[0]['COVER_IMAGE_LOCATION'];
+                $(`#cover_image_bdp`).attr(`src`,`uploads/cover_image/${json_obj[0]['COVER_IMAGE_LOCATION']}`);
+                $(`#description_value`).html(json_obj[0]['DESCRIPTION']);
             }
         }
     };
@@ -49,5 +50,8 @@ function openBookDetails(event){
     });
     $(`#change_cover_input`).change(function(event){
         $(`#cover_image_bdp`).attr(`src`,URL.createObjectURL(event.target.files[0]));
+    });
+    $(`#remove_book_btn`).click(function(event){
+        
     });
 }
