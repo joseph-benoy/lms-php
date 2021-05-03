@@ -304,7 +304,7 @@
                         <div class="modal-body">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="change_cover_input" accept="image/*">
-                                <label class="custom-file-label" for="change_cover_input">Choose file</label>
+                                <label class="custom-file-label" for="change_cover_input" id="change_cover_label">Choose file</label>
                             </div>
                         </div>
                         <div class="modal-footer">

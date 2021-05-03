@@ -72,9 +72,6 @@ function openBookDetails(event){
     $(`#book_name_bdp`).click(function(){
         $('#rename_book_modal').modal('show');
     });
-    $(`#change_cover_input`).change(function(event){
-        $(`#cover_image_bdp`).attr(`src`,URL.createObjectURL(event.target.files[0]));
-    });
     $(`#remove_book_btn`).click({book_id:event.data.book_id},function(event){
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
@@ -236,6 +233,10 @@ function openBookDetails(event){
     });
     $(`#cover_image_bdp`).click(function(){
         $(`#change_cover_modal`).modal(`show`);
+    });
+    $('#change_cover_input').change(function(){
+        let value = $(`#change_cover_input`).val().replace("C:\\fakepath\\","");
+        $(`#change_cover_label`).html(value);
     });
     $(`#change_cover_submit`).click({book_id:event.data.book_id},function(event){
         let imgFlag =true;
