@@ -111,7 +111,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="rename_book_input">Book name</label>
-                                <input type="text" class="form-control" id="change_book_input"  placeholder="Enter book's name" value="My book">
+                                <input type="text" class="form-control" id="change_book_input"  placeholder="Enter book's name">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -133,7 +133,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="rename_author_input">Author's name</label>
-                                <input type="text" class="form-control" id="rename_author_input"  placeholder="Enter authors's name" value="Robert Greene">
+                                <input type="text" class="form-control" id="rename_author_input"  placeholder="Enter authors's name">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -155,7 +155,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="rename_publisher_input">Publisher's name</label>
-                                <input type="text" class="form-control" id="rename_publisher_input"  placeholder="Enter publishers's name" value="Hacehtte">
+                                <input type="text" class="form-control" id="rename_publisher_input"  placeholder="Enter publishers's name">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -177,7 +177,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="change_price_input">Price</label>
-                                <input type="number" class="form-control" id="change_price_input"  placeholder="Enter the price" value="500">
+                                <input type="number" class="form-control" id="change_price_input"  placeholder="Enter the price">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -223,7 +223,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="change_description_input">Description</label>
-                                <textarea class="form-control" id="change_description_input" rows="3" cols="15">Stories about power</textarea>
+                                <textarea class="form-control" id="change_description_input" rows="3" cols="15"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -245,7 +245,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="change_stock_input">Stock</label>
-                                <input type="number" class="form-control" id="change_stock_input"  placeholder="Enter the stock" value="5">
+                                <input type="number" class="form-control" id="change_stock_input"  placeholder="Enter the stock">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -320,7 +320,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col text-center">
-                                <img src="uploads/cover_image/48_power.jpg" class="img-thumbnail" alt="cover_image" id="cover_image_bdp">
+                                <img src="uploads/cover_image/dummy.jpg" class="img-thumbnail" alt="cover_image" id="cover_image_bdp">
                             </div>
                         </div>
                         <div class="row">
