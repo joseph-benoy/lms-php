@@ -230,25 +230,7 @@ function openBookDetails(event){
         $(`#change_cover_modal`).modal(`show`);
     });
     $(`#change_cover_submit`).click({book_id:event.data.book_id},function(event){
-        let dbFlag = true;
         let imgFlag =true;
-        let value = $(`#change_cover_input`).val().replace("C:\\fakepath\\","");
-        let xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function(){
-            if(this.readyState===4&&this.status===200){
-                if(this.responseText==="1"){
-                    displayBook(event.data.book_id);
-                    $(`#change_stock_input`).css(`color`,`grey`);
-                }
-                else{
-                    $(`#change_stock_input`).css(`color`,`crimson`);
-                    $(`#change_stock_modal`).modal(`show`);
-                }
-            }
-        };
-        xhttp.open(`POST`,'update_book.php',true);
-        xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
-        xhttp.send(`book_id=${event.data.book_id}&column_name=COVER_IMAGE_LOCATION&value=${value}&type=s`);
         let fd1 = new FormData();
         let file = $('#change_cover_input')[0].files;
         if(file.length > 0 ){
@@ -256,16 +238,45 @@ function openBookDetails(event){
             $.ajax({
                 url: 'add_book.php',
                 type: 'post',
-                data: fd,
+                data: fd1,
                 contentType: false,
                 processData: false,
                 success: function(response){
                     if(response=="0"){
                         imgFlag = false;
+                        console.log("Img stored = 0");
                     }
-                    add_book_modal(dbFlag,imgFlag);
+                    else{
+                        console.log("Img stored = 1");
+                    }
                 },
             });
+        }
+        if(imgFlag){
+            let value = $(`#change_cover_input`).val().replace("C:\\fakepath\\","");
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState===4&&this.status===200){
+                    if(this.responseText==="1"){
+                        displayBook(event.data.book_id);
+                        $(`#change_stock_input`).css(`color`,`grey`);
+                        console.log("img db = 1");
+                    }
+                    else{
+                        $(`#change_cover_input`).css(`color`,`crimson`);
+                        $(`#change_cover_modal`).modal(`show`);
+                        console.log("img db = 0");
+                    }
+                }
+            };
+            xhttp.open(`POST`,'update_book.php',true);
+            xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
+            xhttp.send(`book_id=${event.data.book_id}&column_name=COVER_IMAGE_LOCATION&value=${value}&type=s`);
+        }
+        else{
+            console.log('uuuuuuuuuuuuuuuuuuuuuuuuu');
+            $(`#change_cover_input`).css(`color`,`crimson`);
+            $(`#change_cover_modal`).modal(`show`);
         }
     });
 }
