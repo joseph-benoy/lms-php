@@ -156,4 +156,23 @@ function openBookDetails(event){
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
         xhttp.send(`book_id=${event.data.book_id}&column_name=PRICE&value=${value}&type=i`);
     });
+    $(`#change_category_submit`).click({book_id:event.data.book_id},function(event){
+        let value = $(`#change_category_input`).val();
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState===4&&this.status===200){
+                if(this.responseText==="1"){
+                    displayBook(event.data.book_id);
+                    $(`#change_category_input`).css(`color`,`black`);
+                }
+                else{
+                    $(`#change_category_input`).css(`color`,`crimson`);
+                    $(`#change_category_modal`).modal(`show`);
+                }
+            }
+        };
+        xhttp.open(`POST`,'update_book.php',true);
+        xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
+        xhttp.send(`book_id=${event.data.book_id}&column_name=CATEGORY&value=${value}&type=i`);
+    });
 }
