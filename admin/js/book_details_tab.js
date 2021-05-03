@@ -15,6 +15,14 @@ function displayBook(book_id){
                 $(`#stock_value`).html(json_obj[0]['STOCK']);
                 $(`#cover_image_bdp`).attr(`src`,`uploads/cover_image/${json_obj[0]['COVER_IMAGE_LOCATION']}`);
                 $(`#description_value`).html(json_obj[0]['DESCRIPTION']);
+                //update modals
+                $(`#change_book_input`).val(json_obj[0]['NAME']);
+                $(`#rename_author_input`).val(json_obj[0]['AUTHOR']);
+                $(`#rename_publisher_input`).val(json_obj[0]['PUBLISHER']);
+                $(`#change_price_input`).val(json_obj[0]['PRICE']);
+                $(`#change_category_input`).val(json_obj[0]['CATEGORY']);
+                $(`#change_stock_input`).val(json_obj[0]['STOCK']);
+                $(`#change_description_input`).val(json_obj[0]['DESCRIPTION']);
             }
         }
     };
