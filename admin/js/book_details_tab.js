@@ -51,7 +51,20 @@ function openBookDetails(event){
     $(`#change_cover_input`).change(function(event){
         $(`#cover_image_bdp`).attr(`src`,URL.createObjectURL(event.target.files[0]));
     });
-    $(`#remove_book_btn`).click(function(event){
-        
+    $(`#remove_book_btn`).click({book_id:event.data.book_id},function(event){
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState===4&&this.status===200){
+                if(this.responseText=="0"){
+                    console.log("oombi!");
+                }
+                else{
+                    console.log("Deletion sekkses!!");
+                }
+            }
+        };
+        xhttp.open(`POST`,'remove_book.php',true);
+        xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
+        xhttp.send(`book_id=${event.data.book_id}`);
     });
 }

@@ -333,6 +333,24 @@
                 return $rows;
             }
         }
+        public function remove_row($table_name,$id){
+            $query = "DELETE from {$table_name} WHERE ID=?";
+            if((!$statement = $this->connection->prepare($query))){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            if((!$statement->bind_param('s',$id))){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
+                return 0;
+            }
+            else{
+                return 1;
+            }
+        }
     }
     $db = new DB("localhost","joseph","3057","LMS_PHP");
 ?>

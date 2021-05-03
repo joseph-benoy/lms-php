@@ -20,7 +20,6 @@ function addNewBook(){
         stock:`${$(`#stock_input`).val()}`
     };
     let json_obj = JSON.stringify(obj);
-    console.log(json_obj);
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if(this.readyState===4&&this.status===200){
