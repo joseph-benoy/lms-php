@@ -1,5 +1,6 @@
 #books_tab {
-  position: relative; }
+  position: relative;
+  height: 100vh; }
 
 #searchBtn {
   background-color: #00adb5;
@@ -81,5 +82,12 @@
   font-weight: bold;
   color: #00adb5;
   border: 0.08em solid #00adb5; }
+
+#result_table {
+  overflow-y: auto;
+  height: 50vh; }
+  @media screen and (max-width: 1199px) {
+    #result_table {
+      height: 40vh; } }
 
 /*# sourceMappingURL=books_tab.css.map */

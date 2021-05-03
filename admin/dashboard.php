@@ -271,8 +271,7 @@
                             <p>Error while add the new book to the library</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="error_add_book_submit">Retry</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Retry</button>
                         </div>
                         </div>
                     </div>
@@ -290,8 +289,7 @@
                             <p>Successfully added the book to the library</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="success_add_book_submit">Go back</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary" id="success_add_book_submit" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
                     </div>

@@ -3,6 +3,7 @@ $sidenav_font_color:#eeeeee;
 $light_blue:#00adb5;
 #books_tab{
     position: relative;
+    height: 100vh;
 }
 #searchBtn{
     background-color: $light_blue;
@@ -50,7 +51,6 @@ $light_blue:#00adb5;
 }
 #add_book_btn{
     font-size: 2.5em;
-//    border-radius: 100%;
     @include filter_btn($light_blue,#ffffff );
     border:none;
     position: fixed;
@@ -77,4 +77,11 @@ $light_blue:#00adb5;
 #add_new_book_form button:hover{
     @include filter_btn(#ffffff,$light_blue);
     border: 0.08em solid $light_blue;
+}
+#result_table{
+    overflow-y: auto;
+    height: 50vh;
+    @media screen and (max-width:1199px) {
+        height: 40vh;
+    }
 }

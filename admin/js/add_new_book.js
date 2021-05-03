@@ -24,7 +24,6 @@ function addNewBook(){
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if(this.readyState===4&&this.status===200){
-            console.log(this.responseText);
             if(this.responseText=="0"){
                 dbFlag=false;
             }
@@ -44,7 +43,6 @@ function addNewBook(){
             contentType: false,
             processData: false,
             success: function(response){
-                console.log(response);
                 if(response=="0"){
                     imgFlag = false;
                 }
@@ -53,3 +51,9 @@ function addNewBook(){
         });
     }
 }
+$(document).ready(function(){
+    $(`#success_add_book_submit`).click(function(){
+        $(`#new_book_page`).hide();
+        $(`#books_tab`).show();
+    });
+});

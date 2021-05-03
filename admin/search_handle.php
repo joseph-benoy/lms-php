@@ -7,7 +7,7 @@
     if($result===false||$result=="0"){
         echo "Nothing found!";
     }else{
-        echo '<table class="table table-hover" id="result_table">
+        echo '<table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
