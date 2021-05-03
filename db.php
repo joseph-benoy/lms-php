@@ -72,16 +72,16 @@
             $insert_query.=")";
             if((!$statement = $this->connection->prepare($insert_query)))
             {
-                echo "db error : {$this->connection->error}";
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if((!$statement->bind_param($type_string,...$value_array)))
             {
-                echo "db error : {$this->connection->error}";
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if((!$statement->execute())){
-                echo "db error : {$this->connection->error}";
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             else{
@@ -92,7 +92,7 @@
             $query = "SELECT COUNT(ID) AS COUNT FROM {$table_name}";
             if((!$statement = $this->connection->prepare($query)))
             {
-                echo "db error : {$this->connection->error}";
+                error_log("db error : {$this->connection->error}",0);
             }
             $statement->execute();
             $result = $statement->get_result();
@@ -121,15 +121,19 @@
             $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE NAME LIKE '{$search_value}%'";
             if((!$statement = $this->connection->prepare($search_query)))
             {
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($result=$statement->get_result())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             else{
@@ -140,19 +144,19 @@
             $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS";
             if((!$statement = $this->connection->prepare($search_query)))
             {
-                echo "db error : {$this->connection->error}";
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if((!$statement->execute())){
-                echo "db error : {$this->connection->error}";
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($result=$statement->get_result())){
-                echo "db error : {$this->connection->error}";
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
-                echo "db error : {$this->connection->error}";
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             else{
@@ -163,15 +167,19 @@
             $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE CATEGORY='{$category_value}' AND AUTHOR='{$author_value}'";
             if((!$statement = $this->connection->prepare($search_query)))
             {
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($result=$statement->get_result())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             else{
@@ -180,17 +188,20 @@
         }
         public function filter_books_by_category($category_value){
             $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE CATEGORY='{$category_value}'";
-            if((!$statement = $this->connection->prepare($search_query)))
-            {
+            if((!$statement = $this->connection->prepare($search_query))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($result=$statement->get_result())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             else{
@@ -199,17 +210,20 @@
         }
         public function filter_books_by_author($author_value){
             $search_query = "SELECT ID,NAME,AUTHOR FROM BOOK_DETAILS WHERE AUTHOR='{$author_value}'";
-            if((!$statement = $this->connection->prepare($search_query)))
-            {
+            if((!$statement = $this->connection->prepare($search_query))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($result=$statement->get_result())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             else{
@@ -218,17 +232,20 @@
         }
         public function get_all_authors(){
             $search_query = "SELECT AUTHOR FROM BOOK_DETAILS";
-            if((!$statement = $this->connection->prepare($search_query)))
-            {
+            if((!$statement = $this->connection->prepare($search_query))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($result=$statement->get_result())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             else{
@@ -241,14 +258,16 @@
         }
         public function get_all_categories(){
             $search_query = "SELECT CATEGORY FROM BOOK_DETAILS";
-            if((!$statement = $this->connection->prepare($search_query)))
-            {
+            if((!$statement = $this->connection->prepare($search_query))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($result=$statement->get_result())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
@@ -264,17 +283,20 @@
         }
         public function get_category_list(){
             $search_query = "SELECT CATEGORY FROM CATEGORY_DETAILS";
-            if((!$statement = $this->connection->prepare($search_query)))
-            {
+            if((!$statement = $this->connection->prepare($search_query))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($result=$statement->get_result())){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                error_log("db error : {$this->connection->error}",0);
                 return false;
             }
             else{

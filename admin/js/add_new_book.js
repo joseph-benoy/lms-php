@@ -1,5 +1,15 @@
+function add_book_modal(dbFlag,imgFlag){
+    if(dbFlag&&imgFlag){
+        $(`#success_add_book`).modal(`show`);
+    }
+    else{
+        $(`#error_add_book`).modal(`show`);
+    }
+}
 function addNewBook(){
-      let obj = {
+    let dbFlag = true;
+    let imgFlag =true;
+    let obj = {
         name:`${$(`#bookname_input`).val()}`,
         author:`${$(`#author_input`).val()}`,
         publisher:`${$(`#publisher_input`).val()}`,
@@ -15,6 +25,9 @@ function addNewBook(){
     xhttp.onreadystatechange = function(){
         if(this.readyState===4&&this.status===200){
             console.log(this.responseText);
+            if(this.responseText=="0"){
+                dbFlag=false;
+            }
         }
     };
     xhttp.open(`POST`,'add_book.php',true);
@@ -32,6 +45,10 @@ function addNewBook(){
             processData: false,
             success: function(response){
                 console.log(response);
+                if(response=="0"){
+                    imgFlag = false;
+                }
+                add_book_modal(dbFlag,imgFlag);
             },
         });
     }
