@@ -118,4 +118,23 @@ function openBookDetails(event){
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
         xhttp.send(`book_id=${event.data.book_id}&column_name=AUTHOR&value=${value}&type=s`);
     });
+    $(`#change_publisher_submit`).click({book_id:event.data.book_id},function(event){
+        let value = $(`#rename_publisher_input`).val();
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState===4&&this.status===200){
+                if(this.responseText==="1"){
+                    displayBook(event.data.book_id);
+                    $(`#rename_publisher_input`).css(`color`,`black`);
+                }
+                else{
+                    $(`#rename_publisher_input`).css(`color`,`crimson`);
+                    $(`#rename_publisher_modal`).modal(`show`);
+                }
+            }
+        };
+        xhttp.open(`POST`,'update_book.php',true);
+        xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
+        xhttp.send(`book_id=${event.data.book_id}&column_name=PUBLISHER&value=${value}&type=s`);
+    });
 }
