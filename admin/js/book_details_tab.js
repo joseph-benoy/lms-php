@@ -59,7 +59,14 @@ function openBookDetails(event){
                     console.log("oombi!");
                 }
                 else{
-                    console.log("Deletion sekkses!!");
+                    $(`#book_removal_message`).html(`Successfully removed!`);
+                    $(`#book_removal_cancel`).html('Close');
+                    $(`#remove_book_btn`).hide();
+                    $(`#book_removal_cancel`).click(function(){
+                        $(`#book_details_page`).hide();
+                        $(`#books_tab`).show();
+                        listAllBooks();
+                    });
                 }
             }
         };

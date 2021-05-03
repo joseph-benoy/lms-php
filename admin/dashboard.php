@@ -89,11 +89,11 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Are you sure to remove the book?</p>
+                            <p id="book_removal_message">Are you sure to remove the book?</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" id="remove_book_btn">Remove</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="book_removal_cancel">Cancel</button>
                         </div>
                         </div>
                     </div>
