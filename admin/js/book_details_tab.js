@@ -77,4 +77,21 @@ function openBookDetails(event){
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
         xhttp.send(`book_id=${event.data.book_id}`);
     });
+    $(`#change_book_submit`).click({book_id:event.data.book_id},function(event){
+        let value = $(`#change_book_input`).val();
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function(){
+            if(this.readyState===4&&this.status===20){
+                if(this.responseText==="1"){
+                    $(`#rename_book_modal`).modal(`hide`);
+                }
+                else{
+                    $(`#change_book_input`).css(`color`,`crimson`);
+                }
+            }
+        };
+        xhttp.open(`POST`,'update_book.php',true);
+        xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
+        xhttp.send(`book_id=${event.data.book_id}&column_name=NAME&value=${value}`);
+    });
 }

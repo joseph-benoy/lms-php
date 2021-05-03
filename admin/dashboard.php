@@ -98,6 +98,7 @@
                         </div>
                     </div>
                 </div>
+                <!----------------------Update book details----------------------------->
                 <div class="modal" tabindex="-1" role="dialog" id="rename_book_modal">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
