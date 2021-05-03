@@ -236,7 +236,9 @@ function openBookDetails(event){
     });
     $('#change_cover_input').change(function(){
         let value = $(`#change_cover_input`).val().replace("C:\\fakepath\\","");
-        $(`#change_cover_label`).html(value);
+        if(value!==""){
+            $(`#change_cover_label`).html(value);
+        }
     });
     $(`#change_cover_submit`).click({book_id:event.data.book_id},function(event){
         let imgFlag =true;
@@ -283,7 +285,6 @@ function openBookDetails(event){
             xhttp.send(`book_id=${event.data.book_id}&column_name=COVER_IMAGE_LOCATION&value=${value}&type=s`);
         }
         else{
-            console.log('uuuuuuuuuuuuuuuuuuuuuuuuu');
             $(`#change_cover_input`).css(`color`,`crimson`);
             $(`#change_cover_modal`).modal(`show`);
         }
