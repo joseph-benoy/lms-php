@@ -13,10 +13,10 @@ function addNewBook(){
         name:`${$(`#bookname_input`).val()}`,
         author:`${$(`#author_input`).val()}`,
         publisher:`${$(`#publisher_input`).val()}`,
-        cover_image_location:`48_power.jpg`,
+        cover_image_location:`${$(`#customFile_books`).val().replace("C:\\fakepath\\","")}`,
         price:`${$(`#price_input`).val()}`,
         category:`${$(`#category_select`).val()}`,
-        description:`${$(`#customFile_books`).val().replace("C:\\fakepath\\","")}`,
+        description:`${$(`#book_description_input`).val()}`,
         stock:`${$(`#stock_input`).val()}`
     };
     let json_obj = JSON.stringify(obj);
