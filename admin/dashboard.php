@@ -201,10 +201,6 @@
                                 <label for="change_category_input">Category</label>
                                 <select class="form-control" id="change_category_input">
                                 <option hidden selected >Category</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
                                 </select>
                             </div>
                         </div>

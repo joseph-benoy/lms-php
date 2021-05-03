@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
     require "../db.php";
     $obj_array = [];
-    $result = $db->get_all_categories();
+    $result = $db->get_category_list();
     if($result===false||$result==""){
         echo "Error while fetching Cateogries<br>";
     }

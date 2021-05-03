@@ -26,6 +26,19 @@ function openBookDetails(event){
     $(`#books_tab`).hide();
     $(`#book_details_page`).show();
     displayBook(event.data.book_id);
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange =function(){
+        if(this.readyState===4&&this.status===200){
+            let select_obj = JSON.parse(this.responseText);
+            let category_array = select_obj[0];
+            for(x of category_array){
+                let new_option = $(`<option value="${x}">${x}</option>`);
+                $(`#change_category_input`).append(new_option);
+            }
+        }
+    };
+    xhttp.open(`GET`,`select_handle.php`,true);
+    xhttp.send();
     $(`#back_btn_bdp`).click(function(){
         $(`#book_details_page`).hide();
         $(`#books_tab`).show();
@@ -87,7 +100,7 @@ function openBookDetails(event){
             if(this.readyState===4&&this.status===200){
                 if(this.responseText==="1"){
                     displayBook(event.data.book_id);
-                    $(`#change_book_input`).css(`color`,`black`);
+                    $(`#change_book_input`).css(`color`,`grey`);
                 }
                 else{
                     $(`#change_book_input`).css(`color`,`crimson`);
@@ -106,7 +119,7 @@ function openBookDetails(event){
             if(this.readyState===4&&this.status===200){
                 if(this.responseText==="1"){
                     displayBook(event.data.book_id);
-                    $(`#rename_author_input`).css(`color`,`black`);
+                    $(`#rename_author_input`).css(`color`,`grey`);
                 }
                 else{
                     $(`#rename_author_input`).css(`color`,`crimson`);
@@ -125,7 +138,7 @@ function openBookDetails(event){
             if(this.readyState===4&&this.status===200){
                 if(this.responseText==="1"){
                     displayBook(event.data.book_id);
-                    $(`#rename_publisher_input`).css(`color`,`black`);
+                    $(`#rename_publisher_input`).css(`color`,`grey`);
                 }
                 else{
                     $(`#rename_publisher_input`).css(`color`,`crimson`);
@@ -144,7 +157,7 @@ function openBookDetails(event){
             if(this.readyState===4&&this.status===200){
                 if(this.responseText==="1"){
                     displayBook(event.data.book_id);
-                    $(`#change_price_input`).css(`color`,`black`);
+                    $(`#change_price_input`).css(`color`,`grey`);
                 }
                 else{
                     $(`#change_price_input`).css(`color`,`crimson`);
@@ -163,7 +176,7 @@ function openBookDetails(event){
             if(this.readyState===4&&this.status===200){
                 if(this.responseText==="1"){
                     displayBook(event.data.book_id);
-                    $(`#change_category_input`).css(`color`,`black`);
+                    $(`#change_category_input`).css(`color`,`grey`);
                 }
                 else{
                     $(`#change_category_input`).css(`color`,`crimson`);
@@ -173,6 +186,6 @@ function openBookDetails(event){
         };
         xhttp.open(`POST`,'update_book.php',true);
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
-        xhttp.send(`book_id=${event.data.book_id}&column_name=CATEGORY&value=${value}&type=i`);
+        xhttp.send(`book_id=${event.data.book_id}&column_name=CATEGORY&value=${value}&type=s`);
     });
 }
