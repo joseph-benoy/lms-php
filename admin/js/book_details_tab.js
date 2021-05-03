@@ -1,6 +1,21 @@
 function openBookDetails(event){
     $(`#books_tab`).hide();
     $(`#book_details_page`).show();
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState===4&&this.status===200){
+            if(this.responseText==="0"){
+                document.write("<h2>Error</h2>");
+            }
+            else{
+                let json_obj = JSON.parse(this.responseText);
+                console.log(json_obj);
+            }
+        }
+    };
+    xhttp.open('POST','admin/get_book.php',true);
+    xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
+    xhttp.send(`book_id=${event.data.book_id}`);
     $(`#back_btn_bdp`).click(function(){
         $(`#book_details_page`).hide();
         $(`#books_tab`).show();
