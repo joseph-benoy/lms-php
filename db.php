@@ -313,7 +313,7 @@
                 error_log("db error : {$this->connection->error}",0);
                 return false;
             }
-            if((!$statement=$this->connection->bind_param($book_id,'s'))){
+            if((!$statement->bind_param('s',$book_id))){
                 error_log("db error : {$this->connection->error}",0);
                 return false;
             }

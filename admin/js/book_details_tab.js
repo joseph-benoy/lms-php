@@ -9,7 +9,13 @@ function openBookDetails(event){
             }
             else{
                 let json_obj = JSON.parse(this.responseText);
-                console.log(json_obj);
+                $(`#book_name_value`).html(json_obj[0]['NAME']);
+                $(`#author_name_value`).html(json_obj[0]['AUTHOR']);
+                $(`#publisher_name_value`).html(json_obj[0]['PUBLISHER']);
+                $(`#price_value`).html(json_obj[0]['PRICE']);
+                $(`#category_value`).html(json_obj[0]['CATEGORY']);
+                $(`#stock_value`).html(json_obj[0]['STOCK']);
+                $(`#cover_image_bdp`).src = json_obj[0]['COVER_IMAGE_LOCATION'];
             }
         }
     };

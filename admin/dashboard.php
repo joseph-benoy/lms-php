@@ -317,31 +317,31 @@
                                     <tbody>
                                         <tr id="book_name_bdp">
                                             <td><strong>Book</strong></td>
-                                            <td>My book</td>
+                                            <td id="book_name_value">My book</td>
                                         </tr>
                                         <tr id="author_name_bdp">
                                             <td><strong>Author</strong></td>
-                                            <td>Robert Greene</td>
+                                            <td id="author_name_value">Robert Greene</td>
                                         </tr>
                                         <tr id="publisher_name_bdp">
                                             <td><strong>Publisher</strong></td>
-                                            <td>Thornton</td>
+                                            <td  id="publisher_name_value">Thornton</td>
                                         </tr>
                                         <tr id="price_bdp">
                                             <td><strong>Price</strong></td>
-                                            <td>550</td>
+                                            <td id="price_value">550</td>
                                         </tr>
                                         <tr id="category_bdp">
                                             <td><strong>Category</strong></td>
-                                            <td>Horror</td>
+                                            <td id="category_value">Horror</td>
                                         </tr>
                                         <tr id="description_bdp">
                                             <td><strong>Description</strong></td>
-                                            <td>Stoies about power</td>
+                                            <td  id="description_value">Stoies about power</td>
                                         </tr>
                                         <tr id="stock_bdp">
                                             <td><strong>Stock</strong></td>
-                                            <td>5</td>
+                                            <td id="stock_value">5</td>
                                         </tr>
                                     </tbody>
                                 </table>
