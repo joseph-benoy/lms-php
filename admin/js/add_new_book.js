@@ -31,7 +31,6 @@ function addNewBook(){
             contentType: false,
             processData: false,
             success: function(response){
-                console.log("Filllllllle senttttttttttttt!");
                 console.log(response);
             },
         });
