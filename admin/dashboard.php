@@ -408,9 +408,9 @@
                                 <textarea class="form-control" id="book_description_input" rows="3" cols="120"></textarea>
                             </div>
                         </div>
-                        <button class="btn btn-primary" id="discard_btn" type="reset">Discard</button>
+                        <button class="btn btn-primary btn-block" id="discard_btn" type="reset">Discard</button>
                     </form>
-                    <button class="btn btn-primary" id="new_book_submit">Submit</button>
+                    <button class="btn btn-primary btn-block" id="new_book_submit">Submit</button>
                 </div>
 
                 <!-----------------------------Books Tab--------------------->

@@ -90,4 +90,17 @@
     #result_table {
       height: 40vh; } }
 
+#new_book_submit:hover {
+  background-color: #ffffff;
+  font-weight: bold;
+  color: #00adb5;
+  border: 0.08em solid #00adb5; }
+
+#new_book_submit {
+  margin-top: 1%;
+  background-color: #00adb5;
+  font-weight: bold;
+  color: #ffffff;
+  border: none; }
+
 /*# sourceMappingURL=books_tab.css.map */

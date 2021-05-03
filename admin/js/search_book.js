@@ -24,6 +24,8 @@ function getBookDetails(){
 }
 function listAllBooks(){
     $(`#search`).val(``);
+    $(`#category_select_filter`).val($(`#category_select_filter`).find(`option[selected]`).val());
+    $(`#author_select_filter`).val($(`#author_select_filter`).find(`option[selected]`).val());
     let idArray = [];
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange =function(){

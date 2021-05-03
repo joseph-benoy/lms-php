@@ -85,3 +85,12 @@ $light_blue:#00adb5;
         height: 40vh;
     }
 }
+#new_book_submit:hover{
+    @include filter_btn(#ffffff,$light_blue);
+    border: 0.08em solid $light_blue;
+}
+#new_book_submit{
+    margin-top: 1%;
+    @include filter_btn($light_blue,#ffffff);
+    border: none;
+}
