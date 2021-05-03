@@ -207,7 +207,7 @@ function openBookDetails(event){
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
         xhttp.send(`book_id=${event.data.book_id}&column_name=DESCRIPTION&value=${value}&type=s`);
     });
-    $(`#change_description_submit`).click({book_id:event.data.book_id},function(event){
+    $(`#change_stock_submit`).click({book_id:event.data.book_id},function(event){
         let value = $(`#change_stock_input`).val();
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function(){
@@ -224,6 +224,6 @@ function openBookDetails(event){
         };
         xhttp.open(`POST`,'update_book.php',true);
         xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
-        xhttp.send(`book_id=${event.data.book_id}&column_name=STOCK&value=${value}&type=s`);
+        xhttp.send(`book_id=${event.data.book_id}&column_name=STOCK&value=${value}&type=i`);
     });
 }
