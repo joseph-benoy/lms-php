@@ -92,7 +92,7 @@
                             <p>Are you sure to remove the book?</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Remove</button>
+                            <button type="button" class="btn btn-primary" id="remove_book_btn">Remove</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                         </div>
@@ -307,7 +307,7 @@
                             <div class="col">
                                 <div class="custom-file">
                                     <input type="file" accept="image/*" class="custom-file-input" id="change_cover_input">
-                                    <label class="custom-file-label" for="change_cover_input">Change cover image  <i class="bi bi-pencil-square"></i></label>
+                                    <label class="custom-file-label" for="change_cover_input">Change cover image</label>
                                 </div>
                             </div>
                         </div>
