@@ -370,6 +370,32 @@
                 return 1;
             }
         }
+        public function get_admin_details($id){
+            $search_query = "SELECT * from ADMIN_DETAILS WHERE ID=?";
+            if((!$statement = $this->connection->prepare($search_query))){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            if((!$statement->bind_param('s',$id))){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            if(!($result=$statement->get_result())){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            if(!($rows=$result->fetch_all(MYSQLI_ASSOC))){
+                error_log("db error : {$this->connection->error}",0);
+                return false;
+            }
+            else{
+                return $rows;
+            }
+        }
     }
     $db = new DB("localhost","joseph","3057","LMS_PHP");
 ?>

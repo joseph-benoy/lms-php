@@ -24,6 +24,7 @@
     <script src="js/book_details_tab.js"></script>
     <script src="js/search_book.js"></script>
     <script src="js/add_new_book.js"></script>
+    <script src="js/update_profile.js"></script>
 </head>
 <body>
     <div class="container-fluid">
