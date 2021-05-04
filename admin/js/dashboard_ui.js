@@ -64,7 +64,7 @@ function displayAdminProfile(){
         if(file.length > 0 ){
             fd1.append('file',file[0]);
             $.ajax({
-                url: 'add_book.php',
+                url: 'update_avatar.php',
                 type: 'post',
                 data: fd1,
                 contentType: false,
