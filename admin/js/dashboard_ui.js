@@ -4,6 +4,7 @@ function displayAdminProfile(){
         if(this.readyState===4&&this.status===200){
             if(this.responseText!="0"){
                 let obj= JSON.parse(this.responseText);
+                console.log(obj);
                 $(`#firstname_input`).val(obj[0]['FNAME']);
                 $(`#lastname_input`).val(obj[0]['LNAME']);
                 $(`#email_input`).val(obj[0]['EMAIL']);
@@ -56,6 +57,9 @@ function openTab(event){
         };
         xhttp.open(`GET`,`select_handle.php`,true);
         xhttp.send();
+    }
+    if(tab_name==="profile_tab"){
+        displayAdminProfile();
     }
     $(`#new_book_submit`).click(addNewBook);
     closeMobMenu();

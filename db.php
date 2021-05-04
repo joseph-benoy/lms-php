@@ -370,13 +370,13 @@
                 return 1;
             }
         }
-        public function get_admin_details($id){
-            $search_query = "SELECT * from ADMIN_DETAILS WHERE ID=?";
+        public function get_admin_details($email){
+            $search_query = "SELECT ID,FNAME,LNAME,IMAGE_LOCATION,EMAIL,PHONE,DOB,HOUSE,STREET,CITY,STATE,COUNTRY,PIN from ADMIN_DETAILS WHERE EMAIL=?";
             if((!$statement = $this->connection->prepare($search_query))){
                 error_log("db error : {$this->connection->error}",0);
                 return false;
             }
-            if((!$statement->bind_param('s',$id))){
+            if((!$statement->bind_param('s',$email))){
                 error_log("db error : {$this->connection->error}",0);
                 return false;
             }
