@@ -419,6 +419,25 @@
                 return 1;
             }
         }
+        public function update_avatar($table_name,$column,$email,$value){
+            $query = "UPDATE {$table_name} SET {$column} = ? WHERE EMAIL=?";
+            $type_string="ss";
+            if((!$statement = $this->connection->prepare($query))){
+                error_log("db error : {$this->connection->error}",0);
+                return 0;
+            }
+            if((!$statement->bind_param($type_string,$value,$email))){
+                error_log("db error : {$this->connection->error}",0);
+                return 0;
+            }
+            if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
+                return 0;
+            }
+            else{
+                return 1;
+            }
+        }
     }
     $db = new DB("localhost","joseph","3057","LMS_PHP");
 ?>
