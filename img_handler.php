@@ -9,17 +9,17 @@
             if(isset($_POST['verify'])){
                 $check = getimagesize($_FILES[$field_name]['tmp_name']);
                 if(!$check){
-                    return false;
+                    return 0;
                 }
             }
             if(file_exists($target)){
-                return false;
+                return 0;
             }
             if($image_size>2048000){
-                return false;
+                return 0;
             }
             if(!($image_type==='jpeg'||$image_type=='jpg'||$image_type=='png')){
-                return false;
+                return 0;
             }
             else{
                 return move_uploaded_file($_FILES[$field_name]['tmp_name'],$target);
