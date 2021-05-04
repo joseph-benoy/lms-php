@@ -396,6 +396,29 @@
                 return $rows;
             }
         }
+        public function update_admin($email,$value_array){
+            $query = "UPDATE ADMIN_DETAILS SET
+            FNAME=?,LNAME=?,EMAIL=?,PHONE=?,
+            DOB=?,HOUSE=?,STREET=?,CITY=?,STATE=?,COUNTRY=?,PIN=?
+            WHERE EMAIL=?";
+            $type_string="ssssssssssis";
+            array_push($value_array,$email);
+            if((!$statement = $this->connection->prepare($query))){
+                error_log("db error : {$this->connection->error}",0);
+                return 0;
+            }
+            if((!$statement->bind_param($type_string,...$value_array))){
+                error_log("db error : {$this->connection->error}",0);
+                return 0;
+            }
+            if((!$statement->execute())){
+                error_log("db error : {$this->connection->error}",0);
+                return 0;
+            }
+            else{
+                return 1;
+            }
+        }
     }
     $db = new DB("localhost","joseph","3057","LMS_PHP");
 ?>

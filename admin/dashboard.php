@@ -24,7 +24,6 @@
     <script src="js/book_details_tab.js"></script>
     <script src="js/search_book.js"></script>
     <script src="js/add_new_book.js"></script>
-    <script src="js/update_profile.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -99,6 +98,45 @@
                         </div>
                     </div>
                 </div>
+
+                <!--------------------------Admin profile updation status modal-------------------------->
+                <div class="modal" tabindex="-1" role="dialog" id="update_success_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Updation successful</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="book_removal_message">Admin's profile updated successfully</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" tabindex="-1" role="dialog" id="update_failure_modal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Updation failure</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="book_removal_message">Admin's profile updation failed</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Retry</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!----------------------Update book details----------------------------->
                 <div class="modal" tabindex="-1" role="dialog" id="rename_book_modal">
                     <div class="modal-dialog" role="document">
@@ -529,14 +567,8 @@
                     <h2>Profile Settings</h2>
                     <form id="profile_update_form">
                         <div class="form-row" id="admin_avatar_row">
-                            <div class="col-md-1 mb-3">
+                            <div class="col-md-1 mb-3 text-center">
                                 <img src="uploads/profile_pic/avatar.png" alt="admin_avatar" class="img-fluid" id="admin_avatar">
-                            </div>
-                            <div class="col-md-3 mb-3 text-center">
-                                <div class="custom-file" id="file_input_grp_profile">
-                                    <input type="file" class="custom-file-input" id="avatar_file" >
-                                    <label id="avatar_input_label" for="avatar_file"><i class="bi bi-pencil-square"></i>Change photo</label>
-                                  </div>
                             </div>
                         </div>
                         <div class="form-row">
@@ -606,14 +638,12 @@
                             </div>
                           </div>
                         <div class="form-row">
-                            <div class="col-6 mb-3">
+                            <div class="col-12 mb-3">
                                 <button class="btn btn-primary btn-block" id="discard_btn_profile" type="reset">Discard</button>
                             </div>
-                            <div class="col-6 mb-3">
-                                <button class="btn btn-primary btn-block" id="submit_btn_profile" type="submit">Submit</button>
-                            </div>
                         </div>
-                    </form>                    
+                    </form>   
+                    <button class="btn btn-primary btn-block" id="submit_btn_profile">Submit</button>                 
                 </div>
                 <div class="container tab" id="logout_tab">
                     <h1>Logout_tab</h1>
