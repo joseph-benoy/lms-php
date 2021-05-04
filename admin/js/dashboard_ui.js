@@ -1,3 +1,27 @@
+function displayAdminProfile(){
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState===4&&this.status===200){
+            if(this.responseText!="0"){
+                let obj= JSON.parse(this.responseText);
+                $(`#firstname_input`).val(obj[0]['FNAME']);
+                $(`#lastname_input`).val(obj[0]['LNAME']);
+                $(`#email_input`).val(obj[0]['EMAIL']);
+                $(`#phone_input`).val(obj[0]['PHONE']);
+                $(`#date_of_birth_input`).val(obj[0]['DOB']);
+                $(`#house_input`).val(obj[0]['HOUSE']);
+                $(`#street_input`).val(obj[0]['STREET']);
+                $(`#city_input`).val(obj[0]['CITY']);
+                $(`#state_input`).val(obj[0]['STATE']);
+                $(`#country_input`).val(obj[0]['COUNTRY']);
+                $(`#pin_input`).val(obj[0]['PIN']);
+                $(`#admin_avatar`).attr(`src`,`uploads/profile_pic/${obj[0]['IMAGE_LOCATION']}`);
+            }
+        }
+    };
+    xhttp.open(`GET`,'display_admin_profile.php',true);
+    xhttp.send();
+}
 function closeMobMenu(){
     $(`#mob_menu`).hide();
 }
