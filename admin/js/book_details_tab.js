@@ -255,10 +255,9 @@ function openBookDetails(event){
                 success: function(response){
                     if(response=="0"){
                         imgFlag = false;
-                        console.log("Img stored = 0");
                     }
                     else{
-                        console.log("Img stored = 1");
+                        imgFlag = true;
                     }
                 },
             });
@@ -282,8 +281,8 @@ function openBookDetails(event){
             xhttp.send(`book_id=${event.data.book_id}&column_name=COVER_IMAGE_LOCATION&value=${value}&type=s`);
         }
         else{
-            $(`#change_cover_input`).css(`color`,`crimson`);
-            $(`#change_cover_modal`).modal(`show`);
+            $(`#update_cover_input`).css(`color`,`crimson`);
+            $(`#update_cover_modal`).modal(`show`);
         }
     });
 }

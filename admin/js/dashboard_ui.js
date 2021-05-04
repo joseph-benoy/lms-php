@@ -57,10 +57,10 @@ function displayAdminProfile(){
     $(`#admin_avatar`).click(function(){
         $(`#update_avatar_modal`).modal(`show`);
     });
-    $(`#change_cover_submit`).click({book_id:event.data.book_id},function(event){
+    $(`#update_avatar_submit`).click(function(){
         let imgFlag =true;
         let fd1 = new FormData();
-        let file = $('#change_cover_input')[0].files;
+        let file = $('#update_avatar_input')[0].files;
         if(file.length > 0 ){
             fd1.append('file',file[0]);
             $.ajax({
@@ -72,10 +72,9 @@ function displayAdminProfile(){
                 success: function(response){
                     if(response=="0"){
                         imgFlag = false;
-                        console.log("Img stored = 0");
                     }
                     else{
-                        console.log("Img stored = 1");
+                        imgFlag = true;
                     }
                 },
             });
@@ -86,17 +85,17 @@ function displayAdminProfile(){
             xhttp.onreadystatechange = function(){
                 if(this.readyState===4&&this.status===200){
                     if(this.responseText==="1"){
-                        displayBook(event.data.book_id);
+                        displayAdminProfile();
                     }
                     else{
-                        $(`#change_cover_input`).css(`color`,`crimson`);
-                        $(`#change_cover_modal`).modal(`show`);
+                        $(`#update_cover_input`).css(`color`,`crimson`);
+                        $(`#update_cover_modal`).modal(`show`);
                     }
                 }
             };
-            xhttp.open(`POST`,'update_book.php',true);
+            xhttp.open(`POST`,'update_avatar.php',true);
             xhttp.setRequestHeader(`Content-Type`,`application/x-www-form-urlencoded`);
-            xhttp.send(`book_id=${event.data.book_id}&column_name=COVER_IMAGE_LOCATION&value=${value}&type=s`);
+            xhttp.send(`value=${value}`);
         }
         else{
             $(`#update_avatar_input`).css(`color`,`crimson`);
