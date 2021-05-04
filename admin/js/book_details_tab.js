@@ -270,13 +270,10 @@ function openBookDetails(event){
                 if(this.readyState===4&&this.status===200){
                     if(this.responseText==="1"){
                         displayBook(event.data.book_id);
-                        $(`#change_stock_input`).css(`color`,`grey`);
-                        console.log("img db = 1");
                     }
                     else{
                         $(`#change_cover_input`).css(`color`,`crimson`);
                         $(`#change_cover_modal`).modal(`show`);
-                        console.log("img db = 0");
                     }
                 }
             };

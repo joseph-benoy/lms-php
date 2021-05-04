@@ -522,6 +522,29 @@
                     <h1>settings_tab</h1>
                 </div>
                 <div class="container-fluid tab" id="profile_tab">
+                <!-------------------------------Change admin avatar-------------------------------->
+                    <div class="modal" tabindex="-1" role="dialog" id="update_avatar_modal">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Change cover image</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="update_avatar_input" accept="image/*">
+                                    <label class="custom-file-label" for="update_avatar_input" id="update_avatar_label">Choose file</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" id="update_avatar_submit">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModalCenter_profile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter_profileTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -567,7 +590,7 @@
                     <h2>Profile Settings</h2>
                     <form id="profile_update_form">
                         <div class="form-row" id="admin_avatar_row">
-                            <div class="col-md-1 mb-3 text-center">
+                            <div class="col-md-1 mb-3">
                                 <img src="uploads/profile_pic/avatar.png" alt="admin_avatar" class="img-fluid" id="admin_avatar">
                             </div>
                         </div>
